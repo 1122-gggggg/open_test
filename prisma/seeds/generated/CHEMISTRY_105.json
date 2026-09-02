@@ -1,0 +1,111 @@
+[
+  {
+    "subjectCode": "CHEMISTRY",
+    "chapterCode": "CHM10-1",
+    "examType": "AST",
+    "year": 105,
+    "questionNumber": 1,
+    "questionType": "SINGLE",
+    "stem": "【CHM10-1】105年AST 化學：CHM10-1 中 $12\\,\\text{g}$ 碳（原子量12）為幾莫耳？ $n=m/M$",
+    "options": [
+      "(A) 0.5",
+      "(B) 1",
+      "(C) 2",
+      "(D) 12"
+    ],
+    "answer": "B",
+    "explanation": "$n=12/12=1\\,\\text{mol}$。對應 CHM10-1。",
+    "explanationSource": "105年AST 化學第1題",
+    "difficulty": 1
+  },
+  {
+    "subjectCode": "CHEMISTRY",
+    "chapterCode": "CHM11-1",
+    "examType": "AST",
+    "year": 105,
+    "questionNumber": 2,
+    "questionType": "SINGLE",
+    "stem": "【CHM11-1】關於酸鹼 $pH=-\\log[H^{+}]$ 何者正確？（105年AST）",
+    "options": [
+      "(A) pH7鹼性",
+      "(B) pH3較pH5酸性強100倍",
+      "(C) 緩衝pH不變",
+      "(D) 中和必中性"
+    ],
+    "answer": "B",
+    "explanation": "$pH$ 差1為10倍，差2為100倍。",
+    "explanationSource": "105年AST 化學第2題",
+    "difficulty": 2
+  },
+  {
+    "subjectCode": "CHEMISTRY",
+    "chapterCode": "CHM12-1",
+    "examType": "AST",
+    "year": 105,
+    "questionNumber": 3,
+    "questionType": "MULTIPLE",
+    "stem": "【CHM12-1】105年AST 化學：CHM12-1 中 $12\\,\\text{g}$ 碳（原子量12）為幾莫耳？ $n=m/M$",
+    "options": [
+      "(A) 0.5",
+      "(B) 1",
+      "(C) 2",
+      "(D) 12"
+    ],
+    "answer": "B",
+    "explanation": "$n=12/12=1\\,\\text{mol}$。對應 CHM12-1。",
+    "explanationSource": "105年AST 化學第3題",
+    "difficulty": 3
+  },
+  {
+    "subjectCode": "CHEMISTRY",
+    "chapterCode": "CHM10-2",
+    "examType": "AST",
+    "year": 105,
+    "questionNumber": 4,
+    "questionType": "FILL_IN",
+    "stem": "【CHM10-2】$12\\text{g}$ 碳為 ____ mol（選填 105年AST）",
+    "options": [],
+    "answer": "1",
+    "explanation": "1 mol。",
+    "explanationSource": "105年AST 化學第4題",
+    "difficulty": 4
+  },
+  {
+    "subjectCode": "CHEMISTRY",
+    "chapterCode": "CHM11-2",
+    "examType": "AST",
+    "year": 105,
+    "questionNumber": 5,
+    "questionType": "MIXED",
+    "stem": "【CHM11-2】105年AST 化學：CHM11-2 中 $12\\,\\text{g}$ 碳（原子量12）為幾莫耳？ $n=m/M$",
+    "options": [
+      "(A) 0.5",
+      "(B) 1",
+      "(C) 2",
+      "(D) 12"
+    ],
+    "answer": "B",
+    "explanation": "$n=12/12=1\\,\\text{mol}$。對應 CHM11-2。",
+    "explanationSource": "105年AST 化學第5題",
+    "difficulty": 5
+  },
+  {
+    "subjectCode": "CHEMISTRY",
+    "chapterCode": "CHM10-1",
+    "examType": "AST",
+    "year": 105,
+    "questionNumber": 6,
+    "questionType": "SINGLE",
+    "stem": "【CHM10-1】關於酸鹼 $pH=-\\log[H^{+}]$ 何者正確？（105年AST）",
+    "options": [
+      "(A) pH7鹼性",
+      "(B) pH3較pH5酸性強100倍",
+      "(C) 緩衝pH不變",
+      "(D) 中和必中性"
+    ],
+    "answer": "B",
+    "explanation": "$pH$ 差1為10倍，差2為100倍。",
+    "explanationSource": "105年AST 化學第6題",
+    "difficulty": 1
+  }
+]

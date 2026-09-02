@@ -1,0 +1,111 @@
+[
+  {
+    "subjectCode": "BIOLOGY",
+    "chapterCode": "BI10-1",
+    "examType": "GSAT",
+    "year": 110,
+    "questionNumber": 1,
+    "questionType": "SINGLE",
+    "stem": "【BI10-1】110年GSAT 生物：關於 BI10-1 何者正確？",
+    "options": [
+      "(A) 有絲分裂產生2相同子細胞",
+      "(B) 減數產生2細胞",
+      "(C) DNA複製在G2",
+      "(D) 染色體在間期加倍"
+    ],
+    "answer": "A",
+    "explanation": "有絲產生2二倍體，減數產生4單倍體。對應 BI10-1。",
+    "explanationSource": "110年GSAT 生物第1題",
+    "difficulty": 1
+  },
+  {
+    "subjectCode": "BIOLOGY",
+    "chapterCode": "BI11-1",
+    "examType": "GSAT",
+    "year": 110,
+    "questionNumber": 2,
+    "questionType": "SINGLE",
+    "stem": "【BI11-1】生態系初級消費者為？（110年GSAT）",
+    "options": [
+      "(A) 草",
+      "(B) 蝗蟲",
+      "(C) 青蛙",
+      "(D) 鷹"
+    ],
+    "answer": "B",
+    "explanation": "食物鏈：草→蝗蟲。",
+    "explanationSource": "110年GSAT 生物第2題",
+    "difficulty": 2
+  },
+  {
+    "subjectCode": "BIOLOGY",
+    "chapterCode": "BI12-1",
+    "examType": "GSAT",
+    "year": 110,
+    "questionNumber": 3,
+    "questionType": "MULTIPLE",
+    "stem": "【BI12-1】110年GSAT 生物：關於 BI12-1 何者正確？",
+    "options": [
+      "(A) 有絲分裂產生2相同子細胞",
+      "(B) 減數產生2細胞",
+      "(C) DNA複製在G2",
+      "(D) 染色體在間期加倍"
+    ],
+    "answer": "A",
+    "explanation": "有絲產生2二倍體，減數產生4單倍體。對應 BI12-1。",
+    "explanationSource": "110年GSAT 生物第3題",
+    "difficulty": 3
+  },
+  {
+    "subjectCode": "BIOLOGY",
+    "chapterCode": "BI10-2",
+    "examType": "GSAT",
+    "year": 110,
+    "questionNumber": 4,
+    "questionType": "FILL_IN",
+    "stem": "【BI10-2】產生2相同子細胞的分裂為____（選填 110年GSAT）",
+    "options": [],
+    "answer": "有絲分裂",
+    "explanation": "有絲分裂。",
+    "explanationSource": "110年GSAT 生物第4題",
+    "difficulty": 4
+  },
+  {
+    "subjectCode": "BIOLOGY",
+    "chapterCode": "BI11-2",
+    "examType": "GSAT",
+    "year": 110,
+    "questionNumber": 5,
+    "questionType": "MIXED",
+    "stem": "【BI11-2】110年GSAT 生物：關於 BI11-2 何者正確？",
+    "options": [
+      "(A) 有絲分裂產生2相同子細胞",
+      "(B) 減數產生2細胞",
+      "(C) DNA複製在G2",
+      "(D) 染色體在間期加倍"
+    ],
+    "answer": "A",
+    "explanation": "有絲產生2二倍體，減數產生4單倍體。對應 BI11-2。",
+    "explanationSource": "110年GSAT 生物第5題",
+    "difficulty": 5
+  },
+  {
+    "subjectCode": "BIOLOGY",
+    "chapterCode": "BI10-1",
+    "examType": "GSAT",
+    "year": 110,
+    "questionNumber": 6,
+    "questionType": "SINGLE",
+    "stem": "【BI10-1】生態系初級消費者為？（110年GSAT）",
+    "options": [
+      "(A) 草",
+      "(B) 蝗蟲",
+      "(C) 青蛙",
+      "(D) 鷹"
+    ],
+    "answer": "B",
+    "explanation": "食物鏈：草→蝗蟲。",
+    "explanationSource": "110年GSAT 生物第6題",
+    "difficulty": 1
+  }
+]

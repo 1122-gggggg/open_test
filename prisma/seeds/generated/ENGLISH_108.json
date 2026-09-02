@@ -1,0 +1,111 @@
+[
+  {
+    "subjectCode": "ENGLISH",
+    "chapterCode": "EN10-1",
+    "examType": "GSAT",
+    "year": 108,
+    "questionNumber": 1,
+    "questionType": "SINGLE",
+    "stem": "【EN10-1】108年GSAT 英文：\"Had I known the truth, I ____ differently.\"",
+    "options": [
+      "(A) would act",
+      "(B) would have acted",
+      "(C) will act",
+      "(D) had acted"
+    ],
+    "answer": "B",
+    "explanation": "假設語氣：Had I known = If I had known → would have + p.p. 對應 EN10-1。",
+    "explanationSource": "108年GSAT 英文第1題",
+    "difficulty": 4
+  },
+  {
+    "subjectCode": "ENGLISH",
+    "chapterCode": "EN10-2",
+    "examType": "GSAT",
+    "year": 108,
+    "questionNumber": 2,
+    "questionType": "SINGLE",
+    "stem": "【EN10-2】108年GSAT 英文閱讀：sustainable is closest to ____.",
+    "options": [
+      "(A) maintainable",
+      "(B) temporary",
+      "(C) expensive",
+      "(D) controversial"
+    ],
+    "answer": "A",
+    "explanation": "7000詞彙 EN10-2 主題。",
+    "explanationSource": "108年GSAT 英文第2題",
+    "difficulty": 5
+  },
+  {
+    "subjectCode": "ENGLISH",
+    "chapterCode": "EN11-1",
+    "examType": "GSAT",
+    "year": 108,
+    "questionNumber": 3,
+    "questionType": "MULTIPLE",
+    "stem": "【EN11-1】108年GSAT 英文：\"Had I known the truth, I ____ differently.\"",
+    "options": [
+      "(A) would act",
+      "(B) would have acted",
+      "(C) will act",
+      "(D) had acted"
+    ],
+    "answer": "B",
+    "explanation": "假設語氣：Had I known = If I had known → would have + p.p. 對應 EN11-1。",
+    "explanationSource": "108年GSAT 英文第3題",
+    "difficulty": 1
+  },
+  {
+    "subjectCode": "ENGLISH",
+    "chapterCode": "EN11-2",
+    "examType": "GSAT",
+    "year": 108,
+    "questionNumber": 4,
+    "questionType": "FILL_IN",
+    "stem": "【EN11-2】填空：Had I known, I ____ (act) differently.（108年GSAT）",
+    "options": [],
+    "answer": "would have acted",
+    "explanation": "would have acted。",
+    "explanationSource": "108年GSAT 英文第4題",
+    "difficulty": 2
+  },
+  {
+    "subjectCode": "ENGLISH",
+    "chapterCode": "EN12-1",
+    "examType": "GSAT",
+    "year": 108,
+    "questionNumber": 5,
+    "questionType": "MIXED",
+    "stem": "【EN12-1】108年GSAT 英文：\"Had I known the truth, I ____ differently.\"",
+    "options": [
+      "(A) would act",
+      "(B) would have acted",
+      "(C) will act",
+      "(D) had acted"
+    ],
+    "answer": "B",
+    "explanation": "假設語氣：Had I known = If I had known → would have + p.p. 對應 EN12-1。",
+    "explanationSource": "108年GSAT 英文第5題",
+    "difficulty": 3
+  },
+  {
+    "subjectCode": "ENGLISH",
+    "chapterCode": "EN12-2",
+    "examType": "GSAT",
+    "year": 108,
+    "questionNumber": 6,
+    "questionType": "SINGLE",
+    "stem": "【EN12-2】108年GSAT 英文閱讀：sustainable is closest to ____.",
+    "options": [
+      "(A) maintainable",
+      "(B) temporary",
+      "(C) expensive",
+      "(D) controversial"
+    ],
+    "answer": "A",
+    "explanation": "7000詞彙 EN12-2 主題。",
+    "explanationSource": "108年GSAT 英文第6題",
+    "difficulty": 4
+  }
+]

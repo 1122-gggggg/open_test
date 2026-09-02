@@ -1,0 +1,123 @@
+generator client {
+  provider = "prisma-client-js"
+}
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Subject {
+  id        Int      @id @default(autoincrement())
+  name      String
+  code      String   @unique
+  category  String
+  icon      String
+  sortOrder Int
+  chapters  Chapter[]
+  questions Question[]
+  answerLogs AnswerLog[]
+}
+
+model Chapter {
+  id          Int      @id @default(autoincrement())
+  subjectId   Int
+  subject     Subject  @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+  grade       Int
+  semester    Int
+  name        String
+  code        String
+  description String?
+  sortOrder   Int
+  videos      TutorialVideo[]
+  questions   Question[]
+  answerLogs  AnswerLog[]
+  scheduleItems StudyScheduleItem[]
+
+  @@index([subjectId])
+}
+
+model TutorialVideo {
+  id           Int     @id @default(autoincrement())
+  chapterId    Int
+  chapter      Chapter @relation(fields: [chapterId], references: [id], onDelete: Cascade)
+  title        String
+  youtubeId    String
+  channelTitle String
+  viewCount    Int
+  duration     String
+  thumbnailUrl String
+  isCurated    Boolean @default(false)
+
+  @@index([chapterId])
+}
+
+model Question {
+  id                Int      @id @default(autoincrement())
+  subjectId         Int
+  subject           Subject  @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+  chapterId         Int
+  chapter           Chapter  @relation(fields: [chapterId], references: [id], onDelete: Cascade)
+  examType          String
+  year              Int
+  questionNumber    Int
+  questionType      String
+  stem              String
+  options           String
+  answer            String
+  explanation       String
+  explanationSource String
+  authorName        String?
+  diagramUrl        String?
+  difficulty        Int      @default(3)
+  submissions       ExplanationSubmission[]
+  answerLogs        AnswerLog[]
+
+  @@index([subjectId])
+  @@index([chapterId])
+}
+
+model ExplanationSubmission {
+  id                 Int       @id @default(autoincrement())
+  questionId         Int
+  question           Question  @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  contributorName    String
+  proposedExplanation String
+  reason             String
+  status             String    @default("PENDING")
+  reviewerComment    String?
+  createdAt          DateTime  @default(now())
+  reviewedAt         DateTime?
+
+  @@index([questionId])
+  @@index([status])
+}
+
+model AnswerLog {
+  id           Int      @id @default(autoincrement())
+  questionId   Int
+  question     Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  chapterId    Int
+  chapter      Chapter  @relation(fields: [chapterId], references: [id], onDelete: Cascade)
+  subjectId    Int
+  subject      Subject  @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+  userSelected String
+  isCorrect    Boolean
+  timeSpent    Int
+  createdAt    DateTime @default(now())
+
+  @@index([chapterId])
+  @@index([subjectId])
+}
+
+model StudyScheduleItem {
+  id              Int      @id @default(autoincrement())
+  chapterId       Int
+  chapter         Chapter  @relation(fields: [chapterId], references: [id], onDelete: Cascade)
+  scheduledDate   DateTime
+  repetitionStage Int      @default(1)
+  isCompleted     Boolean  @default(false)
+  createdAt       DateTime @default(now())
+
+  @@index([chapterId])
+  @@index([scheduledDate])
+}

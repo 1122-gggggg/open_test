@@ -1,0 +1,111 @@
+[
+  {
+    "subjectCode": "CIVICS",
+    "chapterCode": "CI12-1",
+    "examType": "AST_NEW",
+    "year": 113,
+    "questionNumber": 1,
+    "questionType": "SINGLE",
+    "stem": "【CI12-1】113年AST_NEW 公民：CI12-1 下列何者正確？",
+    "options": [
+      "(A) 憲法保障言論自由",
+      "(B) 法律位階高於憲法",
+      "(C) 行政命令可抵觸法律",
+      "(D) 習慣法無效力"
+    ],
+    "answer": "A",
+    "explanation": "憲法最高法保障基本權。對應 CI12-1。",
+    "explanationSource": "113年AST_NEW 公民與社會第1題",
+    "difficulty": 4
+  },
+  {
+    "subjectCode": "CIVICS",
+    "chapterCode": "CI11-1",
+    "examType": "AST_NEW",
+    "year": 113,
+    "questionNumber": 2,
+    "questionType": "SINGLE",
+    "stem": "【CI11-1】市場經濟價格上升則？（113年AST_NEW）",
+    "options": [
+      "(A) 需求量上升",
+      "(B) 供給量上升",
+      "(C) 均衡量不變",
+      "(D) 無影響"
+    ],
+    "answer": "B",
+    "explanation": "供需法則價格↑供給↑。",
+    "explanationSource": "113年AST_NEW 公民與社會第2題",
+    "difficulty": 5
+  },
+  {
+    "subjectCode": "CIVICS",
+    "chapterCode": "CI10-2",
+    "examType": "AST_NEW",
+    "year": 113,
+    "questionNumber": 3,
+    "questionType": "MULTIPLE",
+    "stem": "【CI10-2】113年AST_NEW 公民：CI10-2 下列何者正確？",
+    "options": [
+      "(A) 憲法保障言論自由",
+      "(B) 法律位階高於憲法",
+      "(C) 行政命令可抵觸法律",
+      "(D) 習慣法無效力"
+    ],
+    "answer": "A",
+    "explanation": "憲法最高法保障基本權。對應 CI10-2。",
+    "explanationSource": "113年AST_NEW 公民與社會第3題",
+    "difficulty": 1
+  },
+  {
+    "subjectCode": "CIVICS",
+    "chapterCode": "CI10-1",
+    "examType": "AST_NEW",
+    "year": 113,
+    "questionNumber": 4,
+    "questionType": "FILL_IN",
+    "stem": "【CI10-1】憲法保障____（選填 113年AST_NEW）",
+    "options": [],
+    "answer": "言論自由",
+    "explanation": "言論自由。",
+    "explanationSource": "113年AST_NEW 公民與社會第4題",
+    "difficulty": 2
+  },
+  {
+    "subjectCode": "CIVICS",
+    "chapterCode": "CI12-1",
+    "examType": "AST_NEW",
+    "year": 113,
+    "questionNumber": 5,
+    "questionType": "MIXED",
+    "stem": "【CI12-1】113年AST_NEW 公民：CI12-1 下列何者正確？",
+    "options": [
+      "(A) 憲法保障言論自由",
+      "(B) 法律位階高於憲法",
+      "(C) 行政命令可抵觸法律",
+      "(D) 習慣法無效力"
+    ],
+    "answer": "A",
+    "explanation": "憲法最高法保障基本權。對應 CI12-1。",
+    "explanationSource": "113年AST_NEW 公民與社會第5題",
+    "difficulty": 3
+  },
+  {
+    "subjectCode": "CIVICS",
+    "chapterCode": "CI11-1",
+    "examType": "AST_NEW",
+    "year": 113,
+    "questionNumber": 6,
+    "questionType": "SINGLE",
+    "stem": "【CI11-1】市場經濟價格上升則？（113年AST_NEW）",
+    "options": [
+      "(A) 需求量上升",
+      "(B) 供給量上升",
+      "(C) 均衡量不變",
+      "(D) 無影響"
+    ],
+    "answer": "B",
+    "explanation": "供需法則價格↑供給↑。",
+    "explanationSource": "113年AST_NEW 公民與社會第6題",
+    "difficulty": 4
+  }
+]

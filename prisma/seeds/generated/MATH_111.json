@@ -1,0 +1,110 @@
+[
+  {
+    "subjectCode": "MATH",
+    "chapterCode": "MA12-1",
+    "examType": "AST_NEW",
+    "year": 111,
+    "questionNumber": 1,
+    "questionType": "SINGLE",
+    "stem": "【MA12-1】111年AST_NEW 數學題：設 $a>0$ 且 $a\\neq1$，若 $f(x)=a^{x}$ 且 $f(2)=4$，則 $g(x)=\\log_{a}x$ 滿足 $g(8)=$？（對應 MA12-1）",
+    "options": [
+      "(A) 1",
+      "(B) 2",
+      "(C) 3",
+      "(D) 4"
+    ],
+    "answer": "C",
+    "explanation": "由 $f(2)=a^{2}=4$ 得 $a=2$。故 $g(x)=\\log_{2}x$，$g(8)=\\log_{2}8=3$。章節 MA12-1 指對數互為反函數、對稱 $y=x$。$$a^{2}=4\\Rightarrow a=2,\\; g(8)=\\frac{\\ln8}{\\ln2}=3$$",
+    "explanationSource": "111年AST_NEW 數學第1題",
+    "difficulty": 2
+  },
+  {
+    "subjectCode": "MATH",
+    "chapterCode": "MA10-5",
+    "examType": "AST_NEW",
+    "year": 111,
+    "questionNumber": 2,
+    "questionType": "SINGLE",
+    "stem": "【MA10-5】二次函數 $f(x)=ax^{2}+bx+c$ 判別式 $D=b^{2}-4ac$，若 $D<0$ 且 $a>0$，則 $f(x)$ 與 $x$ 軸關係為何？（111年AST_NEW）",
+    "options": [
+      "(A) 交兩點",
+      "(B) 交一點",
+      "(C) 無交點且恆正",
+      "(D) 恆負"
+    ],
+    "answer": "C",
+    "explanation": "$D<0$ 無實根，與 $x$ 軸無交點；$a>0$ 開口向上，故 $f(x)>0$ 恆正。$$D=b^{2}-4ac<0, a>0 \\Rightarrow f(x)>0\\;\\forall x$$ 對應 MA10-5。",
+    "explanationSource": "111年AST_NEW 數學第2題",
+    "difficulty": 3
+  },
+  {
+    "subjectCode": "MATH",
+    "chapterCode": "MA11-5",
+    "examType": "AST_NEW",
+    "year": 111,
+    "questionNumber": 3,
+    "questionType": "MULTIPLE",
+    "stem": "【MA11-5】下列關於 $y=\\log_{2}x$ 與 $y=2^{x}$ 何者正確？（多選 111年AST_NEW）",
+    "options": [
+      "(A) 對稱於 $y=x$",
+      "(B) $\\log_{2}8=3$",
+      "(C) $2^{\\log_{2}5}=5$",
+      "(D) 遞減",
+      "(E) 值域 $\\mathbb{R}$"
+    ],
+    "answer": "1,2,3",
+    "explanation": "對數指數互為反函數對稱 $y=x$，(B)(C) 正確。",
+    "explanationSource": "111年AST_NEW 數學第3題",
+    "difficulty": 4
+  },
+  {
+    "subjectCode": "MATH",
+    "chapterCode": "MA10-3",
+    "examType": "AST_NEW",
+    "year": 111,
+    "questionNumber": 4,
+    "questionType": "FILL_IN",
+    "stem": "【MA10-3】若 $\\sin\\theta=\\frac35$ 且 $\\theta$ 在第二象限，則 $\\cos\\theta=$ ____。（選填 111年AST_NEW）",
+    "options": [],
+    "answer": "-4/5",
+    "explanation": "第二象限 $\\cos<0$，$\\sin^{2}+\\cos^{2}=1$ 得 $\\cos\\theta=-4/5$。",
+    "explanationSource": "111年AST_NEW 數學第4題",
+    "difficulty": 5
+  },
+  {
+    "subjectCode": "MATH",
+    "chapterCode": "MA11-3",
+    "examType": "AST_NEW",
+    "year": 111,
+    "questionNumber": 5,
+    "questionType": "MIXED",
+    "stem": "【MA11-3】設 $f(x)=x^{3}-3x$，求 $f'(x)$ 並判極值。$$f'(x)=\\lim_{h\\to0}\\frac{f(x+h)-f(x)}{h}$$（混合題 111年AST_NEW）",
+    "options": [
+      "(A) $f'(x)=3x^{2}-3$",
+      "(B) 極大在 $x=-1$"
+    ],
+    "answer": "A,B",
+    "explanation": "$f'(x)=3x^{2}-3=3(x-1)(x+1)$，$f''=6x$，$f''(-1)<0$ 為極大。",
+    "explanationSource": "111年AST_NEW 數學第5題",
+    "difficulty": 1
+  },
+  {
+    "subjectCode": "MATH",
+    "chapterCode": "MA10-1",
+    "examType": "AST_NEW",
+    "year": 111,
+    "questionNumber": 6,
+    "questionType": "SINGLE",
+    "stem": "【MA10-1】二次函數 $f(x)=ax^{2}+bx+c$ 判別式 $D=b^{2}-4ac$，若 $D<0$ 且 $a>0$，則 $f(x)$ 與 $x$ 軸關係為何？（111年AST_NEW）",
+    "options": [
+      "(A) 交兩點",
+      "(B) 交一點",
+      "(C) 無交點且恆正",
+      "(D) 恆負"
+    ],
+    "answer": "C",
+    "explanation": "$D<0$ 無實根，與 $x$ 軸無交點；$a>0$ 開口向上，故 $f(x)>0$ 恆正。$$D=b^{2}-4ac<0, a>0 \\Rightarrow f(x)>0\\;\\forall x$$ 對應 MA10-1。",
+    "explanationSource": "111年AST_NEW 數學第6題",
+    "difficulty": 2
+  }
+]

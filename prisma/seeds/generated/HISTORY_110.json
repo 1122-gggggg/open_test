@@ -1,0 +1,111 @@
+[
+  {
+    "subjectCode": "HISTORY",
+    "chapterCode": "HI10-1",
+    "examType": "GSAT",
+    "year": 110,
+    "questionNumber": 1,
+    "questionType": "SINGLE",
+    "stem": "【HI10-1】110年GSAT 歷史：HI10-1 荷治主要據點為？",
+    "options": [
+      "(A) 熱蘭遮城",
+      "(B) 聖多明哥城",
+      "(C) 雞籠",
+      "(D) 打狗"
+    ],
+    "answer": "A",
+    "explanation": "荷蘭以熱蘭遮城為中心1624年。對應 HI10-1。",
+    "explanationSource": "110年GSAT 歷史第1題",
+    "difficulty": 1
+  },
+  {
+    "subjectCode": "HISTORY",
+    "chapterCode": "HI11-1",
+    "examType": "GSAT",
+    "year": 110,
+    "questionNumber": 2,
+    "questionType": "SINGLE",
+    "stem": "【HI11-1】何者為一手史料？（110年GSAT）",
+    "options": [
+      "(A) 教科書",
+      "(B) 當時日記",
+      "(C) 後人論文",
+      "(D) 戲劇"
+    ],
+    "answer": "B",
+    "explanation": "一手史料為當時人記錄。",
+    "explanationSource": "110年GSAT 歷史第2題",
+    "difficulty": 2
+  },
+  {
+    "subjectCode": "HISTORY",
+    "chapterCode": "HI12-1",
+    "examType": "GSAT",
+    "year": 110,
+    "questionNumber": 3,
+    "questionType": "MULTIPLE",
+    "stem": "【HI12-1】110年GSAT 歷史：HI12-1 荷治主要據點為？",
+    "options": [
+      "(A) 熱蘭遮城",
+      "(B) 聖多明哥城",
+      "(C) 雞籠",
+      "(D) 打狗"
+    ],
+    "answer": "A",
+    "explanation": "荷蘭以熱蘭遮城為中心1624年。對應 HI12-1。",
+    "explanationSource": "110年GSAT 歷史第3題",
+    "difficulty": 3
+  },
+  {
+    "subjectCode": "HISTORY",
+    "chapterCode": "HI10-2",
+    "examType": "GSAT",
+    "year": 110,
+    "questionNumber": 4,
+    "questionType": "FILL_IN",
+    "stem": "【HI10-2】荷治據點____（選填 110年GSAT）",
+    "options": [],
+    "answer": "熱蘭遮城",
+    "explanation": "熱蘭遮城。",
+    "explanationSource": "110年GSAT 歷史第4題",
+    "difficulty": 4
+  },
+  {
+    "subjectCode": "HISTORY",
+    "chapterCode": "HI11-2",
+    "examType": "GSAT",
+    "year": 110,
+    "questionNumber": 5,
+    "questionType": "MIXED",
+    "stem": "【HI11-2】110年GSAT 歷史：HI11-2 荷治主要據點為？",
+    "options": [
+      "(A) 熱蘭遮城",
+      "(B) 聖多明哥城",
+      "(C) 雞籠",
+      "(D) 打狗"
+    ],
+    "answer": "A",
+    "explanation": "荷蘭以熱蘭遮城為中心1624年。對應 HI11-2。",
+    "explanationSource": "110年GSAT 歷史第5題",
+    "difficulty": 5
+  },
+  {
+    "subjectCode": "HISTORY",
+    "chapterCode": "HI10-1",
+    "examType": "GSAT",
+    "year": 110,
+    "questionNumber": 6,
+    "questionType": "SINGLE",
+    "stem": "【HI10-1】何者為一手史料？（110年GSAT）",
+    "options": [
+      "(A) 教科書",
+      "(B) 當時日記",
+      "(C) 後人論文",
+      "(D) 戲劇"
+    ],
+    "answer": "B",
+    "explanation": "一手史料為當時人記錄。",
+    "explanationSource": "110年GSAT 歷史第6題",
+    "difficulty": 1
+  }
+]

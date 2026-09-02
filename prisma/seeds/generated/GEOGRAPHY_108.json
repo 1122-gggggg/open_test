@@ -1,0 +1,111 @@
+[
+  {
+    "subjectCode": "GEOGRAPHY",
+    "chapterCode": "GE10-1",
+    "examType": "GSAT",
+    "year": 108,
+    "questionNumber": 1,
+    "questionType": "SINGLE",
+    "stem": "【GE10-1】108年GSAT 地理：GE10-1 季風成因為何？",
+    "options": [
+      "(A) 海陸比熱差異",
+      "(B) 板塊運動",
+      "(C) 人口遷移",
+      "(D) 產業轉型"
+    ],
+    "answer": "A",
+    "explanation": "季風由海陸比熱與氣壓差驅動。對應 GE10-1。",
+    "explanationSource": "108年GSAT 地理第1題",
+    "difficulty": 4
+  },
+  {
+    "subjectCode": "GEOGRAPHY",
+    "chapterCode": "GE12-1",
+    "examType": "GSAT",
+    "year": 108,
+    "questionNumber": 2,
+    "questionType": "SINGLE",
+    "stem": "【GE12-1】GIS中向量資料為？（108年GSAT）",
+    "options": [
+      "(A) 衛星影像",
+      "(B) 等高線圖",
+      "(C) 空拍照片",
+      "(D) 氣溫網格"
+    ],
+    "answer": "B",
+    "explanation": "向量為點線面。",
+    "explanationSource": "108年GSAT 地理第2題",
+    "difficulty": 5
+  },
+  {
+    "subjectCode": "GEOGRAPHY",
+    "chapterCode": "GE11-1",
+    "examType": "GSAT",
+    "year": 108,
+    "questionNumber": 3,
+    "questionType": "MULTIPLE",
+    "stem": "【GE11-1】108年GSAT 地理：GE11-1 季風成因為何？",
+    "options": [
+      "(A) 海陸比熱差異",
+      "(B) 板塊運動",
+      "(C) 人口遷移",
+      "(D) 產業轉型"
+    ],
+    "answer": "A",
+    "explanation": "季風由海陸比熱與氣壓差驅動。對應 GE11-1。",
+    "explanationSource": "108年GSAT 地理第3題",
+    "difficulty": 1
+  },
+  {
+    "subjectCode": "GEOGRAPHY",
+    "chapterCode": "GE10-2",
+    "examType": "GSAT",
+    "year": 108,
+    "questionNumber": 4,
+    "questionType": "FILL_IN",
+    "stem": "【GE10-2】季風成因與____差異有關（選填 108年GSAT）",
+    "options": [],
+    "answer": "海陸比熱",
+    "explanation": "海陸比熱。",
+    "explanationSource": "108年GSAT 地理第4題",
+    "difficulty": 2
+  },
+  {
+    "subjectCode": "GEOGRAPHY",
+    "chapterCode": "GE10-1",
+    "examType": "GSAT",
+    "year": 108,
+    "questionNumber": 5,
+    "questionType": "MIXED",
+    "stem": "【GE10-1】108年GSAT 地理：GE10-1 季風成因為何？",
+    "options": [
+      "(A) 海陸比熱差異",
+      "(B) 板塊運動",
+      "(C) 人口遷移",
+      "(D) 產業轉型"
+    ],
+    "answer": "A",
+    "explanation": "季風由海陸比熱與氣壓差驅動。對應 GE10-1。",
+    "explanationSource": "108年GSAT 地理第5題",
+    "difficulty": 3
+  },
+  {
+    "subjectCode": "GEOGRAPHY",
+    "chapterCode": "GE12-1",
+    "examType": "GSAT",
+    "year": 108,
+    "questionNumber": 6,
+    "questionType": "SINGLE",
+    "stem": "【GE12-1】GIS中向量資料為？（108年GSAT）",
+    "options": [
+      "(A) 衛星影像",
+      "(B) 等高線圖",
+      "(C) 空拍照片",
+      "(D) 氣溫網格"
+    ],
+    "answer": "B",
+    "explanation": "向量為點線面。",
+    "explanationSource": "108年GSAT 地理第6題",
+    "difficulty": 4
+  }
+]

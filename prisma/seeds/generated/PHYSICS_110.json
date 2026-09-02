@@ -1,0 +1,111 @@
+[
+  {
+    "subjectCode": "PHYSICS",
+    "chapterCode": "PH10-1",
+    "examType": "GSAT",
+    "year": 110,
+    "questionNumber": 1,
+    "questionType": "SINGLE",
+    "stem": "【PH10-1】110年GSAT 物理：PH10-1 一車以 $v=20\\,\\text{m/s}$ 等速，煞車 $a=-4\\,\\text{m/s}^{2}$，則煞停距離 $s=$？（$v^{2}=v_{0}^{2}+2as$）",
+    "options": [
+      "(A) 40m",
+      "(B) 50m",
+      "(C) 60m",
+      "(D) 80m"
+    ],
+    "answer": "B",
+    "explanation": "由 $v^{2}=v_{0}^{2}+2as$，$0=400-8s$ 得 $s=50\\,\\text{m}$。對應 PH10-1。",
+    "explanationSource": "110年GSAT 物理第1題",
+    "difficulty": 1
+  },
+  {
+    "subjectCode": "PHYSICS",
+    "chapterCode": "PH11-1",
+    "examType": "GSAT",
+    "year": 110,
+    "questionNumber": 2,
+    "questionType": "SINGLE",
+    "stem": "【PH11-1】關於波動 $v=f\\lambda$ 何者正確？（110年GSAT）",
+    "options": [
+      "(A) 頻率越高波長越長",
+      "(B) $f$ 與 $\\lambda$ 成反比",
+      "(C) 波速與介質無關",
+      "(D) 都卜勒不變"
+    ],
+    "answer": "B",
+    "explanation": "$v=f\\lambda$，$f$ 與 $\\lambda$ 反比。",
+    "explanationSource": "110年GSAT 物理第2題",
+    "difficulty": 2
+  },
+  {
+    "subjectCode": "PHYSICS",
+    "chapterCode": "PH12-1",
+    "examType": "GSAT",
+    "year": 110,
+    "questionNumber": 3,
+    "questionType": "MULTIPLE",
+    "stem": "【PH12-1】110年GSAT 物理：PH12-1 一車以 $v=20\\,\\text{m/s}$ 等速，煞車 $a=-4\\,\\text{m/s}^{2}$，則煞停距離 $s=$？（$v^{2}=v_{0}^{2}+2as$）",
+    "options": [
+      "(A) 40m",
+      "(B) 50m",
+      "(C) 60m",
+      "(D) 80m"
+    ],
+    "answer": "B",
+    "explanation": "由 $v^{2}=v_{0}^{2}+2as$，$0=400-8s$ 得 $s=50\\,\\text{m}$。對應 PH12-1。",
+    "explanationSource": "110年GSAT 物理第3題",
+    "difficulty": 3
+  },
+  {
+    "subjectCode": "PHYSICS",
+    "chapterCode": "PH10-2",
+    "examType": "GSAT",
+    "year": 110,
+    "questionNumber": 4,
+    "questionType": "FILL_IN",
+    "stem": "【PH10-2】煞停距離為 ____ m。（選填 110年GSAT）",
+    "options": [],
+    "answer": "50",
+    "explanation": "$s=50$ m。",
+    "explanationSource": "110年GSAT 物理第4題",
+    "difficulty": 4
+  },
+  {
+    "subjectCode": "PHYSICS",
+    "chapterCode": "PH11-2",
+    "examType": "GSAT",
+    "year": 110,
+    "questionNumber": 5,
+    "questionType": "MIXED",
+    "stem": "【PH11-2】關於波動 $v=f\\lambda$ 何者正確？（110年GSAT）",
+    "options": [
+      "(A) 頻率越高波長越長",
+      "(B) $f$ 與 $\\lambda$ 成反比",
+      "(C) 波速與介質無關",
+      "(D) 都卜勒不變"
+    ],
+    "answer": "B",
+    "explanation": "$v=f\\lambda$，$f$ 與 $\\lambda$ 反比。",
+    "explanationSource": "110年GSAT 物理第5題",
+    "difficulty": 5
+  },
+  {
+    "subjectCode": "PHYSICS",
+    "chapterCode": "PH10-1",
+    "examType": "GSAT",
+    "year": 110,
+    "questionNumber": 6,
+    "questionType": "SINGLE",
+    "stem": "【PH10-1】110年GSAT 物理：PH10-1 一車以 $v=20\\,\\text{m/s}$ 等速，煞車 $a=-4\\,\\text{m/s}^{2}$，則煞停距離 $s=$？（$v^{2}=v_{0}^{2}+2as$）",
+    "options": [
+      "(A) 40m",
+      "(B) 50m",
+      "(C) 60m",
+      "(D) 80m"
+    ],
+    "answer": "B",
+    "explanation": "由 $v^{2}=v_{0}^{2}+2as$，$0=400-8s$ 得 $s=50\\,\\text{m}$。對應 PH10-1。",
+    "explanationSource": "110年GSAT 物理第6題",
+    "difficulty": 1
+  }
+]

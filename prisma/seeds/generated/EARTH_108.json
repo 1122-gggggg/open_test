@@ -1,0 +1,111 @@
+[
+  {
+    "subjectCode": "EARTH",
+    "chapterCode": "EA10-1",
+    "examType": "GSAT",
+    "year": 108,
+    "questionNumber": 1,
+    "questionType": "SINGLE",
+    "stem": "【EA10-1】108年GSAT 地科：EA10-1 下列何者為板塊擠壓造成？",
+    "options": [
+      "(A) 海溝",
+      "(B) 中洋脊",
+      "(C) 斷層谷",
+      "(D) 火山島弧"
+    ],
+    "answer": "A",
+    "explanation": "板塊隱沒擠壓形成海溝。對應 EA10-1。",
+    "explanationSource": "108年GSAT 地球科學第1題",
+    "difficulty": 4
+  },
+  {
+    "subjectCode": "EARTH",
+    "chapterCode": "EA10-2",
+    "examType": "GSAT",
+    "year": 108,
+    "questionNumber": 2,
+    "questionType": "SINGLE",
+    "stem": "【EA10-2】恆星光譜分類高溫至低溫為？（108年GSAT）",
+    "options": [
+      "(A) OBAFGKM",
+      "(B) KGFABOM",
+      "(C) MKLGFBA",
+      "(D) GFKMOBA"
+    ],
+    "answer": "A",
+    "explanation": "OBAFGKM 為恆星分類。",
+    "explanationSource": "108年GSAT 地球科學第2題",
+    "difficulty": 5
+  },
+  {
+    "subjectCode": "EARTH",
+    "chapterCode": "EA11-1",
+    "examType": "GSAT",
+    "year": 108,
+    "questionNumber": 3,
+    "questionType": "MULTIPLE",
+    "stem": "【EA11-1】108年GSAT 地科：EA11-1 下列何者為板塊擠壓造成？",
+    "options": [
+      "(A) 海溝",
+      "(B) 中洋脊",
+      "(C) 斷層谷",
+      "(D) 火山島弧"
+    ],
+    "answer": "A",
+    "explanation": "板塊隱沒擠壓形成海溝。對應 EA11-1。",
+    "explanationSource": "108年GSAT 地球科學第3題",
+    "difficulty": 1
+  },
+  {
+    "subjectCode": "EARTH",
+    "chapterCode": "EA10-1",
+    "examType": "GSAT",
+    "year": 108,
+    "questionNumber": 4,
+    "questionType": "FILL_IN",
+    "stem": "【EA10-1】恆星分類序列為____（選填 108年GSAT）",
+    "options": [],
+    "answer": "OBAFGKM",
+    "explanation": "OBAFGKM。",
+    "explanationSource": "108年GSAT 地球科學第4題",
+    "difficulty": 2
+  },
+  {
+    "subjectCode": "EARTH",
+    "chapterCode": "EA10-2",
+    "examType": "GSAT",
+    "year": 108,
+    "questionNumber": 5,
+    "questionType": "MIXED",
+    "stem": "【EA10-2】108年GSAT 地科：EA10-2 下列何者為板塊擠壓造成？",
+    "options": [
+      "(A) 海溝",
+      "(B) 中洋脊",
+      "(C) 斷層谷",
+      "(D) 火山島弧"
+    ],
+    "answer": "A",
+    "explanation": "板塊隱沒擠壓形成海溝。對應 EA10-2。",
+    "explanationSource": "108年GSAT 地球科學第5題",
+    "difficulty": 3
+  },
+  {
+    "subjectCode": "EARTH",
+    "chapterCode": "EA11-1",
+    "examType": "GSAT",
+    "year": 108,
+    "questionNumber": 6,
+    "questionType": "SINGLE",
+    "stem": "【EA11-1】恆星光譜分類高溫至低溫為？（108年GSAT）",
+    "options": [
+      "(A) OBAFGKM",
+      "(B) KGFABOM",
+      "(C) MKLGFBA",
+      "(D) GFKMOBA"
+    ],
+    "answer": "A",
+    "explanation": "OBAFGKM 為恆星分類。",
+    "explanationSource": "108年GSAT 地球科學第6題",
+    "difficulty": 4
+  }
+]

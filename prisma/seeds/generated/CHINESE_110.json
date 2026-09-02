@@ -1,0 +1,111 @@
+[
+  {
+    "subjectCode": "CHINESE",
+    "chapterCode": "CH10-3",
+    "examType": "GSAT",
+    "year": 110,
+    "questionNumber": 1,
+    "questionType": "SINGLE",
+    "stem": "【CH10-3】110年GSAT 國文：「CH10-3」文句「燭之武退秦師，夜縋而出」中「縋」字義何者正確？",
+    "options": [
+      "(A) 名詞繩索",
+      "(B) 動詞用繩拴著下降",
+      "(C) 形容詞緩慢",
+      "(D) 副詞暗中"
+    ],
+    "answer": "B",
+    "explanation": "「縋」為動詞「用繩拴著放下」。對應 CH10-3 先秦散文。",
+    "explanationSource": "110年GSAT 國文第1題",
+    "difficulty": 1
+  },
+  {
+    "subjectCode": "CHINESE",
+    "chapterCode": "CH10-2",
+    "examType": "GSAT",
+    "year": 110,
+    "questionNumber": 2,
+    "questionType": "SINGLE",
+    "stem": "【CH10-2】110年GSAT 國文：下列何者為「CH10-2」正確作者？",
+    "options": [
+      "(A) 左丘明",
+      "(B) 司馬遷",
+      "(C) 蘇軾",
+      "(D) 蒲松齡"
+    ],
+    "answer": "A",
+    "explanation": "依108課綱 CH10-2 篇目考據。",
+    "explanationSource": "110年GSAT 國文第2題",
+    "difficulty": 2
+  },
+  {
+    "subjectCode": "CHINESE",
+    "chapterCode": "CH10-1",
+    "examType": "GSAT",
+    "year": 110,
+    "questionNumber": 3,
+    "questionType": "MULTIPLE",
+    "stem": "【CH10-1】110年GSAT 國文：「CH10-1」文句「燭之武退秦師，夜縋而出」中「縋」字義何者正確？",
+    "options": [
+      "(A) 名詞繩索",
+      "(B) 動詞用繩拴著下降",
+      "(C) 形容詞緩慢",
+      "(D) 副詞暗中"
+    ],
+    "answer": "B",
+    "explanation": "「縋」為動詞「用繩拴著放下」。對應 CH10-1 先秦散文。",
+    "explanationSource": "110年GSAT 國文第3題",
+    "difficulty": 3
+  },
+  {
+    "subjectCode": "CHINESE",
+    "chapterCode": "CH12-3",
+    "examType": "GSAT",
+    "year": 110,
+    "questionNumber": 4,
+    "questionType": "FILL_IN",
+    "stem": "【CH12-3】「燭之武退秦師」出自《____》（選填 110年GSAT）",
+    "options": [],
+    "answer": "左傳",
+    "explanation": "出自《左傳》。",
+    "explanationSource": "110年GSAT 國文第4題",
+    "difficulty": 4
+  },
+  {
+    "subjectCode": "CHINESE",
+    "chapterCode": "CH12-2",
+    "examType": "GSAT",
+    "year": 110,
+    "questionNumber": 5,
+    "questionType": "MIXED",
+    "stem": "【CH12-2】110年GSAT 國文：下列何者為「CH12-2」正確作者？",
+    "options": [
+      "(A) 左丘明",
+      "(B) 司馬遷",
+      "(C) 蘇軾",
+      "(D) 蒲松齡"
+    ],
+    "answer": "A",
+    "explanation": "依108課綱 CH12-2 篇目考據。",
+    "explanationSource": "110年GSAT 國文第5題",
+    "difficulty": 5
+  },
+  {
+    "subjectCode": "CHINESE",
+    "chapterCode": "CH12-1",
+    "examType": "GSAT",
+    "year": 110,
+    "questionNumber": 6,
+    "questionType": "SINGLE",
+    "stem": "【CH12-1】110年GSAT 國文：「CH12-1」文句「燭之武退秦師，夜縋而出」中「縋」字義何者正確？",
+    "options": [
+      "(A) 名詞繩索",
+      "(B) 動詞用繩拴著下降",
+      "(C) 形容詞緩慢",
+      "(D) 副詞暗中"
+    ],
+    "answer": "B",
+    "explanation": "「縋」為動詞「用繩拴著放下」。對應 CH12-1 先秦散文。",
+    "explanationSource": "110年GSAT 國文第6題",
+    "difficulty": 1
+  }
+]
