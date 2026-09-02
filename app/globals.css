@@ -4,3 +4,39 @@
 :root { --background: #f8fafc; --foreground: #0f172a; }
 body { background: var(--background); color: var(--foreground); font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans TC", sans-serif; }
 .katex { font-size: 1.05em; }
+
+/* 列印樣式：僅顯示題目列表，隱藏導航與篩選 */
+@media print {
+  /* 隱藏全域導航與頁尾 */
+  header, nav, footer {
+    display: none !important;
+  }
+  /* 隱藏篩選區與所有標記為 no-print 的元素（含列印按鈕本身） */
+  .no-print, .exam-filters {
+    display: none !important;
+  }
+  /* 重置背景與版面 */
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  main {
+    padding: 0 !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+  /* 僅顯示題目列表區域 */
+  .exam-print-area, .print-area {
+    display: block !important;
+  }
+  /* 題目卡片避免被分頁切斷，移除陰影 */
+  .exam-print-area > div {
+    break-inside: avoid;
+    box-shadow: none !important;
+    border: 1px solid #e2e8f0 !important;
+  }
+  /* 確保列印時題目內容清晰 */
+  @page {
+    margin: 1.5cm;
+  }
+}

@@ -24,7 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <header className="sticky top-0 z-40 bg-white border-b shadow-sm">
           <div className="max-w-7xl mx-auto px-4 h-14 flex items-center justify-between">
             <Link href="/" className="font-bold text-lg text-blue-600">📚 高中全科學習平台</Link>
-            <nav className="flex gap-1 sm:gap-2">
+            <nav aria-label="主導航" className="flex gap-1 sm:gap-2">
               {nav.map(n => (
                 <Link key={n.href} href={n.href} className="px-2 sm:px-3 py-1.5 text-sm rounded-md hover:bg-slate-100 text-slate-700 transition">
                   {n.label}

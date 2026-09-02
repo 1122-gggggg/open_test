@@ -1,8 +1,17 @@
 "use client";
+/* eslint-disable @next/next/no-img-element -- 保留 <img> 以避免 next/image 需額外遠端域名配置；已加 lazy/async 與寬高占位 */
 import { useState } from "react";
 import { formatViewCount } from "@/lib/utils";
 import VideoPlayerModal from "./VideoPlayerModal";
 
+// 確保縮圖使用 https，避免 mixed-content 並符合快取策略
+function ensureHttps(url: string): string {
+  if (!url) return url;
+  if (url.startsWith("https://")) return url;
+  if (url.startsWith("http://")) return url.replace(/^http:\/\//, "https://");
+  if (url.startsWith("//")) return `https:${url}`;
+  return url;
+}
 type Video = { id:number; title:string; youtubeId:string; channelTitle:string; viewCount:number; duration:string; thumbnailUrl:string };
 
 export default function VideoList({ videos, chapterName }: { videos: Video[]; chapterName: string }) {
@@ -21,7 +30,15 @@ export default function VideoList({ videos, chapterName }: { videos: Video[]; ch
         {sorted.map(v=> (
           <div key={v.id} className="bg-white border rounded-xl overflow-hidden hover:shadow-md transition cursor-pointer" onClick={()=> setPlaying(v)}>
             <div className="relative">
-              <img src={v.thumbnailUrl} alt={v.title} className="w-full aspect-video object-cover" />
+              <img
+                src={ensureHttps(v.thumbnailUrl)}
+                alt={v.title}
+                loading="lazy"
+                decoding="async"
+                width={320}
+                height={180}
+                className="w-full aspect-video object-cover bg-slate-100"
+              />
               <span className="absolute bottom-1 right-1 bg-black/75 text-white text-xs px-1.5 py-0.5 rounded">{v.duration}</span>
             </div>
             <div className="p-3">

@@ -43,7 +43,16 @@ const chapterCurated: Record<string, TutorialVideoData[]> = {
   ],
 };
 
+// 記憶體快取：TTL 1 小時，避免重複呼叫 YouTube API
+const memCache = new Map<string,{data:TutorialVideoData[], exp:number}>()
+
 export async function fetchChapterVideos(chapterName: string, subjectName: string, maxResults = 8): Promise<TutorialVideoData[]> {
+  const key = `${chapterName}:${subjectName}:${maxResults}`
+  const cached = memCache.get(key)
+  if (cached && cached.exp > Date.now()) {
+    return cached.data
+  }
+  if (cached) memCache.delete(key)
   const apiKey = process.env.YOUTUBE_API_KEY;
   if (apiKey) {
     try {
@@ -67,7 +76,10 @@ export async function fetchChapterVideos(chapterName: string, subjectName: strin
               thumbnailUrl: item.snippet.thumbnails?.medium?.url || `https://img.youtube.com/vi/${item.id}/mqdefault.jpg`,
             }));
             videos.sort((a,b)=> b.viewCount - a.viewCount);
-            if (videos.length > 0) return videos;
+            if (videos.length > 0) {
+              memCache.set(key,{data:videos,exp:Date.now()+3600*1000})
+              return videos;
+            }
           }
         }
       }
@@ -77,11 +89,17 @@ export async function fetchChapterVideos(chapterName: string, subjectName: strin
   }
   // fallback
   const curated = chapterCurated[chapterName] || chapterCurated[chapterName.replace(/^.*_/,"")] || null;
-  if (curated) return [...curated].sort((a,b)=> b.viewCount - a.viewCount);
+  if (curated) {
+    const result = [...curated].sort((a,b)=> b.viewCount - a.viewCount);
+    memCache.set(key,{data:result,exp:Date.now()+3600*1000})
+    return result;
+  }
   // generic fallback mixed with chapter
   const generic = [...curatedLibrary.default];
   // sprinkle chapter name into title for relevance
-  return generic.map(v=> ({...v, title: v.title.replace("學測", chapterName + " 學測")})).sort((a,b)=> b.viewCount - a.viewCount).slice(0, maxResults);
+  const result = generic.map(v=> ({...v, title: v.title.replace("學測", chapterName + " 學測")})).sort((a,b)=> b.viewCount - a.viewCount).slice(0, maxResults);
+  memCache.set(key,{data:result,exp:Date.now()+3600*1000})
+  return result;
 }
 
 export function getFallbackVideos(chapterName: string): TutorialVideoData[] {

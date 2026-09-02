@@ -7,6 +7,16 @@ export default function AdminClient(){
   const [filter, setFilter] = useState("PENDING");
   const [loading, setLoading] = useState(true);
   const [msg, setMsg] = useState("");
+  // 管理員 Token，持久化於 localStorage（key: admin_token）
+  const [adminToken, setAdminToken] = useState("");
+
+  // 初始化時從 localStorage 讀取 token
+  useEffect(()=>{
+    try {
+      const saved = localStorage.getItem("admin_token");
+      if (saved) setAdminToken(saved);
+    } catch {}
+  },[]);
 
   async function load(){
     setLoading(true);
@@ -19,14 +29,21 @@ export default function AdminClient(){
 
   async function act(id:number, action:"APPROVE"|"REJECT"){
     setMsg("");
+    // 儲存前先確保 localStorage 同步（若使用者剛輸入）
+    try { localStorage.setItem("admin_token", adminToken); } catch {}
     const res = await fetch(`/api/admin/submissions/${id}`, {
-      method:"PUT", headers:{"Content-Type":"application/json"},
+      method:"PUT",
+      headers:{
+        "Content-Type":"application/json",
+        "x-admin-token": adminToken,
+      },
       body: JSON.stringify({ action, reviewerComment: action==="REJECT" ? "感謝貢獻，經審核暫不採納" : "已審核採納，感謝貢獻！" })
     });
     const j = await res.json();
     if (res.ok) { setMsg(action==="APPROVE" ? "✅ 已採納並更新題目詳解" : "已駁回"); load(); }
     else setMsg(j.error || "操作失敗");
   }
+
 
   const filtered = subs.filter(s=> filter==="ALL" ? true : s.status===filter);
 
@@ -41,6 +58,23 @@ export default function AdminClient(){
             <button key={f} onClick={()=> setFilter(f)} className={`px-3 py-1.5 text-xs rounded-lg border ${filter===f ? "bg-blue-600 text-white border-blue-600" : "bg-white"}`}>{f}</button>
           ))}
         </div>
+      </div>
+      {/* 管理員驗證：Token 輸入框，自動保存至 localStorage */}
+      <div className="bg-white border rounded-xl p-4 flex flex-col sm:flex-row gap-3 sm:items-center">
+        <label htmlFor="admin-token-input" className="text-sm font-medium text-slate-700 whitespace-nowrap">管理員 Token：</label>
+        <input
+          id="admin-token-input"
+          type="password"
+          placeholder="請輸入 ADMIN_TOKEN（未設定則留空）"
+          value={adminToken}
+          onChange={(e)=> {
+            const v = e.target.value;
+            setAdminToken(v);
+            try { localStorage.setItem("admin_token", v); } catch {}
+          }}
+          className="flex-1 w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        />
+        <span className="text-xs text-slate-400 whitespace-nowrap hidden sm:inline">自動保存於瀏覽器（localStorage）</span>
       </div>
       {msg && <div className="p-3 bg-blue-50 border border-blue-200 rounded text-sm text-blue-800">{msg}</div>}
       {filtered.length===0 ? <div className="bg-white border rounded-xl p-8 text-center text-slate-400 text-sm">沒有 {`"${filter}"`} 的提案</div> :
