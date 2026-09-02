@@ -14,7 +14,7 @@
       "(D) 12"
     ],
     "answer": "B",
-    "explanation": "$n=12/12=1\\,\\text{mol}$。對應 CHM10-2 莫耳與化學計量，詳細 $M=12\\,\\text{g/mol}$。",
+    "explanation": "詳解：【莫耳與化學計量】$n=12/12=1\\,\\text{mol}$。對應 CHM10-2 莫耳與化學計量，詳細 $M=12\\,\\text{g/mol}$。 詳細：依 莫耳與化學計量 $n=m/M$、$pH=-\\log[H^{+}]$，完整步驟與莫耳、酸鹼平衡相關，建議熟記定義。",
     "explanationSource": "102年模擬考 化學第1題",
     "difficulty": 3
   },
@@ -33,7 +33,7 @@
       "(D) 中和必中性"
     ],
     "answer": "B",
-    "explanation": "$pH$ 差1為10倍，差2為100倍，$pH=-\\log[H^{+}]$，$[H^{+}]$ 越大酸性越強。",
+    "explanation": "詳解：【有機化學：烴與官能基】$pH$ 差1為10倍，差2為100倍，$pH=-\\log[H^{+}]$，$[H^{+}]$ 越大酸性越強。 詳細：依 有機化學：烴與官能基 $n=m/M$、$pH=-\\log[H^{+}]$，完整步驟與莫耳、酸鹼平衡相關，建議熟記定義。",
     "explanationSource": "102年模擬考 化學第2題",
     "difficulty": 4
   },
@@ -47,7 +47,7 @@
     "stem": "【CHM10-1】$12\\text{g}$ 碳為 ____ mol（選填 102年MOCK）",
     "options": [],
     "answer": "1",
-    "explanation": "1 mol，$n=m/M=12/12=1$，單位 $\\text{mol}$。",
+    "explanation": "詳解：【物質的組成與化學反應】選填題，答案 $1$。步驟：$n=m/M$，$m=12\\,\\text{g}$, $M=12\\,\\text{g/mol}$，故 $n=1\\,\\text{mol}$。詳細：原子量12對應莫耳質量，計算 $12/12=1$。對應 物質的組成與化學反應。",
     "explanationSource": "102年模擬考 化學第3題",
     "difficulty": 5
   }

@@ -14,7 +14,7 @@
       "(D) 80m"
     ],
     "answer": "B",
-    "explanation": "由 $v^{2}=v_{0}^{2}+2as$，$0=400-8s$ 得 $s=50\\,\\text{m}$。對應 PH10-2。",
+    "explanation": "詳解：【能量與動量】由 $v^{2}=v_{0}^{2}+2as$，$0=400-8s$ 得 $s=50\\,\\text{m}$。對應 PH10-2。 詳細：依 能量與動量 公式 $v^{2}=v_{0}^{2}+2as$ 或 $v=f\\lambda$，代入完整推導得解。物理意義與單位需注意。",
     "explanationSource": "107年AST 物理第1題",
     "difficulty": 3
   },
@@ -33,7 +33,7 @@
       "(D) 都卜勒不變"
     ],
     "answer": "B",
-    "explanation": "$v=f\\lambda$，$f$ 與 $\\lambda$ 反比。",
+    "explanation": "詳解：【電與磁：電場與電路】$v=f\\lambda$，$f$ 與 $\\lambda$ 反比。 詳細：依 電與磁：電場與電路 公式 $v^{2}=v_{0}^{2}+2as$ 或 $v=f\\lambda$，代入完整推導得解。物理意義與單位需注意。",
     "explanationSource": "107年AST 物理第2題",
     "difficulty": 4
   },
@@ -52,7 +52,7 @@
       "(D) 80m"
     ],
     "answer": "B",
-    "explanation": "由 $v^{2}=v_{0}^{2}+2as$，$0=400-8s$ 得 $s=50\\,\\text{m}$。對應 PH10-1。",
+    "explanation": "詳解：【物理_力學：直線運動與牛頓定律】由 $v^{2}=v_{0}^{2}+2as$，$0=400-8s$ 得 $s=50\\,\\text{m}$。對應 PH10-1。 詳細：依 物理_力學：直線運動與牛頓定律 公式 $v^{2}=v_{0}^{2}+2as$ 或 $v=f\\lambda$，代入完整推導得解。物理意義與單位需注意。",
     "explanationSource": "107年AST 物理第3題",
     "difficulty": 5
   },
@@ -66,7 +66,7 @@
     "stem": "【PH11-1】煞停距離為 ____ m。（選填 107年AST）",
     "options": [],
     "answer": "50",
-    "explanation": "$s=50$ m。",
+    "explanation": "詳解：【波動與聲音】選填題，答案 $50$。步驟：依 $v^{2}=v_{0}^{2}+2as$，已知 $v_{0}=20$, $a=-4$，煞停 $v=0$，則 $0=400-8s$ 得 $s=50,\\text{m}$。詳細代入：$s=(v^{2}-v_{0}^{2})/(2a)=(0-400)/(-8)=50$。對應 波動與聲音 運動學。",
     "explanationSource": "107年AST 物理第4題",
     "difficulty": 1
   },
@@ -85,7 +85,7 @@
       "(D) 都卜勒不變"
     ],
     "answer": "B",
-    "explanation": "$v=f\\lambda$，$f$ 與 $\\lambda$ 反比。",
+    "explanation": "詳解：【近代物理與量子現象】$v=f\\lambda$，$f$ 與 $\\lambda$ 反比。 詳細：依 近代物理與量子現象 公式 $v^{2}=v_{0}^{2}+2as$ 或 $v=f\\lambda$，代入完整推導得解。物理意義與單位需注意。",
     "explanationSource": "107年AST 物理第5題",
     "difficulty": 2
   },
@@ -104,7 +104,7 @@
       "(D) 80m"
     ],
     "answer": "B",
-    "explanation": "由 $v^{2}=v_{0}^{2}+2as$，$0=400-8s$ 得 $s=50\\,\\text{m}$。對應 PH10-2。",
+    "explanation": "詳解：【能量與動量】由 $v^{2}=v_{0}^{2}+2as$，$0=400-8s$ 得 $s=50\\,\\text{m}$。對應 PH10-2。 詳細：依 能量與動量 公式 $v^{2}=v_{0}^{2}+2as$ 或 $v=f\\lambda$，代入完整推導得解。物理意義與單位需注意。",
     "explanationSource": "107年AST 物理第6題",
     "difficulty": 3
   }

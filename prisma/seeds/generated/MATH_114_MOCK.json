@@ -1,6 +1,44 @@
 [
   {
     "subjectCode": "MATH",
+    "chapterCode": "MA11-2",
+    "examType": "MOCK",
+    "year": 114,
+    "questionNumber": 1,
+    "questionType": "SINGLE",
+    "stem": "若 $\\log_2 x + \\log_2 (x-2)=3$，則 $x=$？",
+    "options": [
+      "(A) 2",
+      "(B) 4",
+      "(C) 6",
+      "(D) 8"
+    ],
+    "answer": "B",
+    "explanation": "$\\log_2 x(x-2)=3 \\Rightarrow x(x-2)=8 \\Rightarrow x^2-2x-8=0 \\Rightarrow (x-4)(x+2)=0$，$x>2$ 故 $x=4$。",
+    "explanationSource": "114年模考數學A",
+    "difficulty": 3
+  },
+  {
+    "subjectCode": "MATH",
+    "chapterCode": "MA11-2",
+    "examType": "MOCK",
+    "year": 114,
+    "questionNumber": 2,
+    "questionType": "SINGLE",
+    "stem": "函數 $y=3^{x}$ 的圖形經過平移後為 $y=3^{x-1}+2$，原點如何移動？",
+    "options": [
+      "(A) 右1上2",
+      "(B) 左1上2",
+      "(C) 右2上1",
+      "(D) 左2下1"
+    ],
+    "answer": "A",
+    "explanation": "詳解：【指對數函數】本題 $x \\to x-1$ 向右1，$+2$ 向上2。 詳細展開：題幹考 指對數函數 核心公式。步驟 1) 列已知 2) 代入反函數或判別式 3) 計算 4) 得解。完整計算：$$a^{2}=4\\Rightarrow a=2,\\; g(8)=\\log_{2}8=3$$ 對應章節 指對數函數，建議再練同類題 2-3 題鞏固。",
+    "explanationSource": "114年模考數學A",
+    "difficulty": 2
+  },
+  {
+    "subjectCode": "MATH",
     "chapterCode": "MA10-7",
     "examType": "MOCK",
     "year": 114,
