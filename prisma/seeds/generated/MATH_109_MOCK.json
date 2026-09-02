@@ -1,0 +1,55 @@
+[
+  {
+    "subjectCode": "MATH",
+    "chapterCode": "MA11-1",
+    "examType": "MOCK",
+    "year": 109,
+    "questionNumber": 101,
+    "questionType": "SINGLE",
+    "stem": "【MA11-1】109年MOCK 數學題：設 $a>0$ 且 $a\\neq1$，若 $f(x)=a^{x}$ 且 $f(2)=4$，則 $g(x)=\\log_{a}x$ 滿足 $g(8)=$？（對應 MA11-1）",
+    "options": [
+      "(A) 1",
+      "(B) 2",
+      "(C) 3",
+      "(D) 4"
+    ],
+    "answer": "C",
+    "explanation": "由 $f(2)=a^{2}=4$ 得 $a=2$。故 $g(x)=\\log_{2}x$，$g(8)=\\log_{2}8=3$。章節 MA11-1 指對數互為反函數、對稱 $y=x$。$$a^{2}=4\\Rightarrow a=2,\\; g(8)=\\frac{\\ln8}{\\ln2}=3$$ 詳細步驟：利用指對數定義與換底公式，代入驗證。",
+    "explanationSource": "109年模擬考 數學第1題",
+    "difficulty": 5
+  },
+  {
+    "subjectCode": "MATH",
+    "chapterCode": "MA12-2",
+    "examType": "MOCK",
+    "year": 109,
+    "questionNumber": 102,
+    "questionType": "MULTIPLE",
+    "stem": "【MA12-2】下列關於 $y=\\log_{2}x$ 與 $y=2^{x}$ 何者正確？（多選 109年MOCK）",
+    "options": [
+      "(A) 對稱於 $y=x$",
+      "(B) $\\log_{2}8=3$",
+      "(C) $2^{\\log_{2}5}=5$",
+      "(D) 遞減",
+      "(E) 值域 $\\mathbb{R}$"
+    ],
+    "answer": "1,2,3",
+    "explanation": "對數指數互為反函數對稱 $y=x$，(B)(C) 正確，(D)底數2>1遞增錯，(E)值域 $y>0$ 錯。詳細推導如 $y=\\log_{a}x \\iff a^{y}=x$。",
+    "explanationSource": "109年模擬考 數學第2題",
+    "difficulty": 1
+  },
+  {
+    "subjectCode": "MATH",
+    "chapterCode": "MA10-6",
+    "examType": "MOCK",
+    "year": 109,
+    "questionNumber": 103,
+    "questionType": "FILL_IN",
+    "stem": "【MA10-6】若 $\\sin\\theta=\\frac35$ 且 $\\theta$ 在第二象限，則 $\\cos\\theta=$ ____。（選填 109年MOCK）",
+    "options": [],
+    "answer": "-4/5",
+    "explanation": "第二象限 $\\cos<0$，由 $\\sin^{2}+\\cos^{2}=1$ 得 $\\cos\\theta=-\\sqrt{1-9/25}=-4/5$。詳細：$\\sin^{2}=9/25$，$\\cos^{2}=16/25$，開方取負。",
+    "explanationSource": "109年模擬考 數學第3題",
+    "difficulty": 2
+  }
+]

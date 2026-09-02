@@ -1,0 +1,110 @@
+[
+  {
+    "subjectCode": "MATH",
+    "chapterCode": "MA11-2",
+    "examType": "GSAT",
+    "year": 104,
+    "questionNumber": 1,
+    "questionType": "SINGLE",
+    "stem": "【MA11-2】104年GSAT 數學題：設 $a>0$ 且 $a\\neq1$，若 $f(x)=a^{x}$ 且 $f(2)=4$，則 $g(x)=\\log_{a}x$ 滿足 $g(8)=$？（對應 MA11-2）",
+    "options": [
+      "(A) 1",
+      "(B) 2",
+      "(C) 3",
+      "(D) 4"
+    ],
+    "answer": "C",
+    "explanation": "由 $f(2)=a^{2}=4$ 得 $a=2$。故 $g(x)=\\log_{2}x$，$g(8)=\\log_{2}8=3$。章節 MA11-2 指對數互為反函數、對稱 $y=x$。$$a^{2}=4\\Rightarrow a=2,\\; g(8)=\\frac{\\ln8}{\\ln2}=3$$ 詳細步驟：利用指對數定義與換底公式，代入驗證。",
+    "explanationSource": "104年GSAT 數學第1題",
+    "difficulty": 5
+  },
+  {
+    "subjectCode": "MATH",
+    "chapterCode": "MA12-3",
+    "examType": "GSAT",
+    "year": 104,
+    "questionNumber": 2,
+    "questionType": "SINGLE",
+    "stem": "【MA12-3】二次函數 $f(x)=ax^{2}+bx+c$ 判別式 $D=b^{2}-4ac$，若 $D<0$ 且 $a>0$，則 $f(x)$ 與 $x$ 軸關係為何？（104年GSAT）",
+    "options": [
+      "(A) 交兩點",
+      "(B) 交一點",
+      "(C) 無交點且恆正",
+      "(D) 恆負"
+    ],
+    "answer": "C",
+    "explanation": "$D<0$ 無實根，與 $x$ 軸無交點；$a>0$ 開口向上，故 $f(x)>0$ 恆正。$$D=b^{2}-4ac<0, a>0 \\Rightarrow f(x)>0\\;\\forall x$$ 對應 MA12-3。",
+    "explanationSource": "104年GSAT 數學第2題",
+    "difficulty": 1
+  },
+  {
+    "subjectCode": "MATH",
+    "chapterCode": "MA10-7",
+    "examType": "GSAT",
+    "year": 104,
+    "questionNumber": 3,
+    "questionType": "MULTIPLE",
+    "stem": "【MA10-7】下列關於 $y=\\log_{2}x$ 與 $y=2^{x}$ 何者正確？（多選 104年GSAT）",
+    "options": [
+      "(A) 對稱於 $y=x$",
+      "(B) $\\log_{2}8=3$",
+      "(C) $2^{\\log_{2}5}=5$",
+      "(D) 遞減",
+      "(E) 值域 $\\mathbb{R}$"
+    ],
+    "answer": "1,2,3",
+    "explanation": "對數指數互為反函數對稱 $y=x$，(B)(C) 正確，(D)底數2>1遞增錯，(E)值域 $y>0$ 錯。詳細推導如 $y=\\log_{a}x \\iff a^{y}=x$。",
+    "explanationSource": "104年GSAT 數學第3題",
+    "difficulty": 2
+  },
+  {
+    "subjectCode": "MATH",
+    "chapterCode": "MA12-1",
+    "examType": "GSAT",
+    "year": 104,
+    "questionNumber": 4,
+    "questionType": "FILL_IN",
+    "stem": "【MA12-1】若 $\\sin\\theta=\\frac35$ 且 $\\theta$ 在第二象限，則 $\\cos\\theta=$ ____。（選填 104年GSAT）",
+    "options": [],
+    "answer": "-4/5",
+    "explanation": "第二象限 $\\cos<0$，由 $\\sin^{2}+\\cos^{2}=1$ 得 $\\cos\\theta=-\\sqrt{1-9/25}=-4/5$。詳細：$\\sin^{2}=9/25$，$\\cos^{2}=16/25$，開方取負。",
+    "explanationSource": "104年GSAT 數學第4題",
+    "difficulty": 3
+  },
+  {
+    "subjectCode": "MATH",
+    "chapterCode": "MA10-5",
+    "examType": "GSAT",
+    "year": 104,
+    "questionNumber": 5,
+    "questionType": "MIXED",
+    "stem": "【MA10-5】設 $f(x)=x^{3}-3x$，求 $f'(x)$ 並判極值。$$f'(x)=\\lim_{h\\to0}\\frac{f(x+h)-f(x)}{h}$$（混合題 104年GSAT）",
+    "options": [
+      "(A) $f'(x)=3x^{2}-3$",
+      "(B) 極大在 $x=-1$"
+    ],
+    "answer": "A,B",
+    "explanation": "$f'(x)=3x^{2}-3=3(x-1)(x+1)$，令 $f'=0$ 得 $x=\\pm1$，$f''=6x$，$f''(-1)<0$ 為極大，$f''(1)>0$ 為極小。",
+    "explanationSource": "104年GSAT 數學第5題",
+    "difficulty": 4
+  },
+  {
+    "subjectCode": "MATH",
+    "chapterCode": "MA11-5",
+    "examType": "GSAT",
+    "year": 104,
+    "questionNumber": 6,
+    "questionType": "SINGLE",
+    "stem": "【MA11-5】二次函數 $f(x)=ax^{2}+bx+c$ 判別式 $D=b^{2}-4ac$，若 $D<0$ 且 $a>0$，則 $f(x)$ 與 $x$ 軸關係為何？（104年GSAT）",
+    "options": [
+      "(A) 交兩點",
+      "(B) 交一點",
+      "(C) 無交點且恆正",
+      "(D) 恆負"
+    ],
+    "answer": "C",
+    "explanation": "$D<0$ 無實根，與 $x$ 軸無交點；$a>0$ 開口向上，故 $f(x)>0$ 恆正。$$D=b^{2}-4ac<0, a>0 \\Rightarrow f(x)>0\\;\\forall x$$ 對應 MA11-5。",
+    "explanationSource": "104年GSAT 數學第6題",
+    "difficulty": 5
+  }
+]

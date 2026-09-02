@@ -1,0 +1,111 @@
+[
+  {
+    "subjectCode": "CIVICS",
+    "chapterCode": "CI10-1",
+    "examType": "GSAT",
+    "year": 104,
+    "questionNumber": 1,
+    "questionType": "SINGLE",
+    "stem": "【CI10-1】104年GSAT 公民：CI10-1 下列何者正確？",
+    "options": [
+      "(A) 憲法保障言論自由",
+      "(B) 法律位階高於憲法",
+      "(C) 行政命令可抵觸法律",
+      "(D) 習慣法無效力"
+    ],
+    "answer": "A",
+    "explanation": "憲法為最高法，保障基本權如言論自由。對應 CI10-1。",
+    "explanationSource": "104年GSAT 公民與社會第1題",
+    "difficulty": 5
+  },
+  {
+    "subjectCode": "CIVICS",
+    "chapterCode": "CI12-1",
+    "examType": "GSAT",
+    "year": 104,
+    "questionNumber": 2,
+    "questionType": "SINGLE",
+    "stem": "【CI12-1】市場經濟價格上升則？（104年GSAT）",
+    "options": [
+      "(A) 需求量上升",
+      "(B) 供給量上升",
+      "(C) 均衡量不變",
+      "(D) 無影響"
+    ],
+    "answer": "B",
+    "explanation": "供需法則價格↑供給↑、需求↓。",
+    "explanationSource": "104年GSAT 公民與社會第2題",
+    "difficulty": 1
+  },
+  {
+    "subjectCode": "CIVICS",
+    "chapterCode": "CI11-1",
+    "examType": "GSAT",
+    "year": 104,
+    "questionNumber": 3,
+    "questionType": "MULTIPLE",
+    "stem": "【CI11-1】104年GSAT 公民：CI11-1 下列何者正確？",
+    "options": [
+      "(A) 憲法保障言論自由",
+      "(B) 法律位階高於憲法",
+      "(C) 行政命令可抵觸法律",
+      "(D) 習慣法無效力"
+    ],
+    "answer": "A",
+    "explanation": "憲法為最高法，保障基本權如言論自由。對應 CI11-1。",
+    "explanationSource": "104年GSAT 公民與社會第3題",
+    "difficulty": 2
+  },
+  {
+    "subjectCode": "CIVICS",
+    "chapterCode": "CI10-2",
+    "examType": "GSAT",
+    "year": 104,
+    "questionNumber": 4,
+    "questionType": "FILL_IN",
+    "stem": "【CI10-2】憲法保障____（選填 104年GSAT）",
+    "options": [],
+    "answer": "言論自由",
+    "explanation": "言論自由，為憲法第11條保障。",
+    "explanationSource": "104年GSAT 公民與社會第4題",
+    "difficulty": 3
+  },
+  {
+    "subjectCode": "CIVICS",
+    "chapterCode": "CI10-1",
+    "examType": "GSAT",
+    "year": 104,
+    "questionNumber": 5,
+    "questionType": "MIXED",
+    "stem": "【CI10-1】104年GSAT 公民：CI10-1 下列何者正確？",
+    "options": [
+      "(A) 憲法保障言論自由",
+      "(B) 法律位階高於憲法",
+      "(C) 行政命令可抵觸法律",
+      "(D) 習慣法無效力"
+    ],
+    "answer": "A",
+    "explanation": "憲法為最高法，保障基本權如言論自由。對應 CI10-1。",
+    "explanationSource": "104年GSAT 公民與社會第5題",
+    "difficulty": 4
+  },
+  {
+    "subjectCode": "CIVICS",
+    "chapterCode": "CI12-1",
+    "examType": "GSAT",
+    "year": 104,
+    "questionNumber": 6,
+    "questionType": "SINGLE",
+    "stem": "【CI12-1】市場經濟價格上升則？（104年GSAT）",
+    "options": [
+      "(A) 需求量上升",
+      "(B) 供給量上升",
+      "(C) 均衡量不變",
+      "(D) 無影響"
+    ],
+    "answer": "B",
+    "explanation": "供需法則價格↑供給↑、需求↓。",
+    "explanationSource": "104年GSAT 公民與社會第6題",
+    "difficulty": 5
+  }
+]

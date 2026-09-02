@@ -1,0 +1,54 @@
+[
+  {
+    "subjectCode": "ENGLISH",
+    "chapterCode": "EN10-1",
+    "examType": "MOCK",
+    "year": 106,
+    "questionNumber": 101,
+    "questionType": "SINGLE",
+    "stem": "【EN10-1】106年MOCK 英文：\"Had I known the truth, I ____ differently.\"",
+    "options": [
+      "(A) would act",
+      "(B) would have acted",
+      "(C) will act",
+      "(D) had acted"
+    ],
+    "answer": "B",
+    "explanation": "假設語氣與過去事實相反：Had I known = If I had known → would have + p.p. 對應 EN10-1 文法句型，詳細時態一致原則。",
+    "explanationSource": "106年模擬考 英文第1題",
+    "difficulty": 2
+  },
+  {
+    "subjectCode": "ENGLISH",
+    "chapterCode": "EN10-2",
+    "examType": "MOCK",
+    "year": 106,
+    "questionNumber": 102,
+    "questionType": "MULTIPLE",
+    "stem": "【EN10-2】106年MOCK 英文閱讀：sustainable is closest to ____.",
+    "options": [
+      "(A) maintainable",
+      "(B) temporary",
+      "(C) expensive",
+      "(D) controversial"
+    ],
+    "answer": "A",
+    "explanation": "7000詞彙 EN10-2 主題，sustainable = maintainable 可持續的，語境推斷。",
+    "explanationSource": "106年模擬考 英文第2題",
+    "difficulty": 3
+  },
+  {
+    "subjectCode": "ENGLISH",
+    "chapterCode": "EN11-1",
+    "examType": "MOCK",
+    "year": 106,
+    "questionNumber": 103,
+    "questionType": "FILL_IN",
+    "stem": "【EN11-1】填空：Had I known, I ____ (act) differently.（106年MOCK）",
+    "options": [],
+    "answer": "would have acted",
+    "explanation": "would have acted，過去假設語氣助動詞完成式。",
+    "explanationSource": "106年模擬考 英文第3題",
+    "difficulty": 4
+  }
+]

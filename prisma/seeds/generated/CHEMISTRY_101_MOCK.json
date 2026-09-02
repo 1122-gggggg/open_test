@@ -1,0 +1,54 @@
+[
+  {
+    "subjectCode": "CHEMISTRY",
+    "chapterCode": "CHM11-2",
+    "examType": "MOCK",
+    "year": 101,
+    "questionNumber": 101,
+    "questionType": "SINGLE",
+    "stem": "【CHM11-2】101年MOCK 化學：CHM11-2 中 $12\\,\\text{g}$ 碳（原子量12）為幾莫耳？ $n=m/M$",
+    "options": [
+      "(A) 0.5",
+      "(B) 1",
+      "(C) 2",
+      "(D) 12"
+    ],
+    "answer": "B",
+    "explanation": "$n=12/12=1\\,\\text{mol}$。對應 CHM11-2 莫耳與化學計量，詳細 $M=12\\,\\text{g/mol}$。",
+    "explanationSource": "101年模擬考 化學第1題",
+    "difficulty": 2
+  },
+  {
+    "subjectCode": "CHEMISTRY",
+    "chapterCode": "CHM10-1",
+    "examType": "MOCK",
+    "year": 101,
+    "questionNumber": 102,
+    "questionType": "MULTIPLE",
+    "stem": "【CHM10-1】關於酸鹼 $pH=-\\log[H^{+}]$ 何者正確？（101年MOCK）",
+    "options": [
+      "(A) pH7鹼性",
+      "(B) pH3較pH5酸性強100倍",
+      "(C) 緩衝pH不變",
+      "(D) 中和必中性"
+    ],
+    "answer": "B",
+    "explanation": "$pH$ 差1為10倍，差2為100倍，$pH=-\\log[H^{+}]$，$[H^{+}]$ 越大酸性越強。",
+    "explanationSource": "101年模擬考 化學第2題",
+    "difficulty": 3
+  },
+  {
+    "subjectCode": "CHEMISTRY",
+    "chapterCode": "CHM11-1",
+    "examType": "MOCK",
+    "year": 101,
+    "questionNumber": 103,
+    "questionType": "FILL_IN",
+    "stem": "【CHM11-1】$12\\text{g}$ 碳為 ____ mol（選填 101年MOCK）",
+    "options": [],
+    "answer": "1",
+    "explanation": "1 mol，$n=m/M=12/12=1$，單位 $\\text{mol}$。",
+    "explanationSource": "101年模擬考 化學第3題",
+    "difficulty": 4
+  }
+]

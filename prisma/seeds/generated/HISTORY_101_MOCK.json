@@ -1,0 +1,54 @@
+[
+  {
+    "subjectCode": "HISTORY",
+    "chapterCode": "HI11-2",
+    "examType": "MOCK",
+    "year": 101,
+    "questionNumber": 101,
+    "questionType": "SINGLE",
+    "stem": "【HI11-2】101年MOCK 歷史：HI11-2 荷治主要據點為？",
+    "options": [
+      "(A) 熱蘭遮城",
+      "(B) 聖多明哥城",
+      "(C) 雞籠",
+      "(D) 打狗"
+    ],
+    "answer": "A",
+    "explanation": "荷蘭以熱蘭遮城（安平）為中心，1624年建立，統治台灣38年。對應 HI11-2。",
+    "explanationSource": "101年模擬考 歷史第1題",
+    "difficulty": 2
+  },
+  {
+    "subjectCode": "HISTORY",
+    "chapterCode": "HI10-1",
+    "examType": "MOCK",
+    "year": 101,
+    "questionNumber": 102,
+    "questionType": "MULTIPLE",
+    "stem": "【HI10-1】何者為一手史料？（101年MOCK）",
+    "options": [
+      "(A) 教科書",
+      "(B) 當時日記",
+      "(C) 後人論文",
+      "(D) 戲劇"
+    ],
+    "answer": "B",
+    "explanation": "一手史料為當時人直接記錄，如日記、檔案。",
+    "explanationSource": "101年模擬考 歷史第2題",
+    "difficulty": 3
+  },
+  {
+    "subjectCode": "HISTORY",
+    "chapterCode": "HI11-1",
+    "examType": "MOCK",
+    "year": 101,
+    "questionNumber": 103,
+    "questionType": "FILL_IN",
+    "stem": "【HI11-1】荷治據點____（選填 101年MOCK）",
+    "options": [],
+    "answer": "熱蘭遮城",
+    "explanation": "熱蘭遮城，今台南安平。",
+    "explanationSource": "101年模擬考 歷史第3題",
+    "difficulty": 4
+  }
+]

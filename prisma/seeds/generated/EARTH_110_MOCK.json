@@ -1,0 +1,54 @@
+[
+  {
+    "subjectCode": "EARTH",
+    "chapterCode": "EA10-1",
+    "examType": "MOCK",
+    "year": 110,
+    "questionNumber": 101,
+    "questionType": "SINGLE",
+    "stem": "【EA10-1】110年MOCK 地科：EA10-1 下列何者為板塊擠壓造成？",
+    "options": [
+      "(A) 海溝",
+      "(B) 中洋脊",
+      "(C) 斷層谷",
+      "(D) 火山島弧"
+    ],
+    "answer": "A",
+    "explanation": "板塊隱沒擠壓形成海溝，張裂形成中洋脊。對應 EA10-1 地質作用。",
+    "explanationSource": "110年模擬考 地球科學第1題",
+    "difficulty": 1
+  },
+  {
+    "subjectCode": "EARTH",
+    "chapterCode": "EA10-2",
+    "examType": "MOCK",
+    "year": 110,
+    "questionNumber": 102,
+    "questionType": "MULTIPLE",
+    "stem": "【EA10-2】恆星光譜分類高溫至低溫為？（110年MOCK）",
+    "options": [
+      "(A) OBAFGKM",
+      "(B) KGFABOM",
+      "(C) MKLGFBA",
+      "(D) GFKMOBA"
+    ],
+    "answer": "A",
+    "explanation": "OBAFGKM 為恆星分類順序，O型最熱，M型最冷。",
+    "explanationSource": "110年模擬考 地球科學第2題",
+    "difficulty": 2
+  },
+  {
+    "subjectCode": "EARTH",
+    "chapterCode": "EA11-1",
+    "examType": "MOCK",
+    "year": 110,
+    "questionNumber": 103,
+    "questionType": "FILL_IN",
+    "stem": "【EA11-1】恆星分類序列為____（選填 110年MOCK）",
+    "options": [],
+    "answer": "OBAFGKM",
+    "explanation": "OBAFGKM，依表面溫度由高至低。",
+    "explanationSource": "110年模擬考 地球科學第3題",
+    "difficulty": 3
+  }
+]

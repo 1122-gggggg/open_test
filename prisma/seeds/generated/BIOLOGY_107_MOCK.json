@@ -1,0 +1,54 @@
+[
+  {
+    "subjectCode": "BIOLOGY",
+    "chapterCode": "BI10-2",
+    "examType": "MOCK",
+    "year": 107,
+    "questionNumber": 101,
+    "questionType": "SINGLE",
+    "stem": "【BI10-2】107年MOCK 生物：關於 BI10-2 何者正確？",
+    "options": [
+      "(A) 有絲分裂產生2相同子細胞",
+      "(B) 減數產生2細胞",
+      "(C) DNA複製在G2",
+      "(D) 染色體在間期加倍"
+    ],
+    "answer": "A",
+    "explanation": "有絲分裂產生2二倍體子細胞，減數產生4單倍體。對應 BI10-2 細胞週期，DNA複製在S期。",
+    "explanationSource": "107年模擬考 生物第1題",
+    "difficulty": 3
+  },
+  {
+    "subjectCode": "BIOLOGY",
+    "chapterCode": "BI11-2",
+    "examType": "MOCK",
+    "year": 107,
+    "questionNumber": 102,
+    "questionType": "MULTIPLE",
+    "stem": "【BI11-2】生態系初級消費者為？（107年MOCK）",
+    "options": [
+      "(A) 草",
+      "(B) 蝗蟲",
+      "(C) 青蛙",
+      "(D) 鷹"
+    ],
+    "answer": "B",
+    "explanation": "食物鏈：生產者草→初級消費者蝗蟲→次級青蛙→頂級鷹。",
+    "explanationSource": "107年模擬考 生物第2題",
+    "difficulty": 4
+  },
+  {
+    "subjectCode": "BIOLOGY",
+    "chapterCode": "BI10-1",
+    "examType": "MOCK",
+    "year": 107,
+    "questionNumber": 103,
+    "questionType": "FILL_IN",
+    "stem": "【BI10-1】產生2相同子細胞的分裂為____（選填 107年MOCK）",
+    "options": [],
+    "answer": "有絲分裂",
+    "explanation": "有絲分裂（mitosis），產生遺傳物質相同的2子細胞。",
+    "explanationSource": "107年模擬考 生物第3題",
+    "difficulty": 5
+  }
+]

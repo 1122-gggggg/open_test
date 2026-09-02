@@ -1,0 +1,54 @@
+[
+  {
+    "subjectCode": "GEOGRAPHY",
+    "chapterCode": "GE11-1",
+    "examType": "MOCK",
+    "year": 102,
+    "questionNumber": 101,
+    "questionType": "SINGLE",
+    "stem": "【GE11-1】102年MOCK 地理：GE11-1 季風成因為何？",
+    "options": [
+      "(A) 海陸比熱差異",
+      "(B) 板塊運動",
+      "(C) 人口遷移",
+      "(D) 產業轉型"
+    ],
+    "answer": "A",
+    "explanation": "季風由海陸比熱與氣壓差驅動，夏季海洋高壓吹向陸地。對應 GE11-1。",
+    "explanationSource": "102年模擬考 地理第1題",
+    "difficulty": 3
+  },
+  {
+    "subjectCode": "GEOGRAPHY",
+    "chapterCode": "GE10-2",
+    "examType": "MOCK",
+    "year": 102,
+    "questionNumber": 102,
+    "questionType": "MULTIPLE",
+    "stem": "【GE10-2】GIS中向量資料為？（102年MOCK）",
+    "options": [
+      "(A) 衛星影像",
+      "(B) 等高線圖",
+      "(C) 空拍照片",
+      "(D) 氣溫網格"
+    ],
+    "answer": "B",
+    "explanation": "向量為點線面，等高線屬向量，衛星影像屬網格。",
+    "explanationSource": "102年模擬考 地理第2題",
+    "difficulty": 4
+  },
+  {
+    "subjectCode": "GEOGRAPHY",
+    "chapterCode": "GE10-1",
+    "examType": "MOCK",
+    "year": 102,
+    "questionNumber": 103,
+    "questionType": "FILL_IN",
+    "stem": "【GE10-1】季風成因與____差異有關（選填 102年MOCK）",
+    "options": [],
+    "answer": "海陸比熱",
+    "explanation": "海陸比熱差異與氣壓梯度。",
+    "explanationSource": "102年模擬考 地理第3題",
+    "difficulty": 5
+  }
+]

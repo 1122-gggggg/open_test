@@ -1,0 +1,54 @@
+[
+  {
+    "subjectCode": "CHINESE",
+    "chapterCode": "CH11-2",
+    "examType": "MOCK",
+    "year": 100,
+    "questionNumber": 101,
+    "questionType": "SINGLE",
+    "stem": "【CH11-2】100年MOCK 國文：「CH11-2」文句「燭之武退秦師，夜縋而出」中「縋」字義何者正確？",
+    "options": [
+      "(A) 名詞繩索",
+      "(B) 動詞用繩拴著下降",
+      "(C) 形容詞緩慢",
+      "(D) 副詞暗中"
+    ],
+    "answer": "B",
+    "explanation": "「縋」為動詞「用繩拴著人或物從高處放下」，屬動詞活用。對應 CH11-2 先秦散文《左傳》，夜間用繩從城牆縋下。詳細字義與詞類活用分析。",
+    "explanationSource": "100年模擬考 國文第1題",
+    "difficulty": 1
+  },
+  {
+    "subjectCode": "CHINESE",
+    "chapterCode": "CH11-1",
+    "examType": "MOCK",
+    "year": 100,
+    "questionNumber": 102,
+    "questionType": "MULTIPLE",
+    "stem": "【CH11-1】100年MOCK 國文：下列何者為「CH11-1」正確作者？",
+    "options": [
+      "(A) 左丘明",
+      "(B) 司馬遷",
+      "(C) 蘇軾",
+      "(D) 蒲松齡"
+    ],
+    "answer": "A",
+    "explanation": "依108課綱 CH11-1 篇目對應作者考據與時代背景分析。",
+    "explanationSource": "100年模擬考 國文第2題",
+    "difficulty": 2
+  },
+  {
+    "subjectCode": "CHINESE",
+    "chapterCode": "CH10-3",
+    "examType": "MOCK",
+    "year": 100,
+    "questionNumber": 103,
+    "questionType": "FILL_IN",
+    "stem": "【CH10-3】「燭之武退秦師」出自《____》（選填 100年MOCK）",
+    "options": [],
+    "answer": "左傳",
+    "explanation": "出自《左傳·僖公三十年》，為先秦敘事散文代表，記述燭之武說退秦軍。",
+    "explanationSource": "100年模擬考 國文第3題",
+    "difficulty": 3
+  }
+]
