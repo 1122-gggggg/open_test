@@ -74,3 +74,4 @@ export async function GET(req: NextRequest) {
 
   const nextCursor = questions.length > 0 ? questions[questions.length - 1].id : null;
   return NextResponse.json({ questions, nextCursor, total });
+}

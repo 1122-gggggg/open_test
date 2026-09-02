@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
 import QuestionCard from "@/components/exam/QuestionCard";
+import { safeLocalStorage } from "@/lib/storage";
 
 // 年份選項：涵蓋 100~115（民國年），避免依賴全量 questions 推導，保持分頁後仍可篩選
 const YEAR_OPTIONS = Array.from({ length: 16 }, (_, i) => 115 - i); // 115..100
@@ -18,6 +19,8 @@ export default function ExamClient({ subjects, chapters }: any) {
   const [hasMore, setHasMore] = useState<boolean>(true);
   const [loading, setLoading] = useState<boolean>(false);
   const [total, setTotal] = useState<number>(0);
+  const [favorites, setFavorites] = useState<number[]>(()=> safeLocalStorage.getJSON<number[]>("favorites", []));
+  const [showFavOnly, setShowFavOnly] = useState<boolean>(false);
   const [initialLoaded, setInitialLoaded] = useState<boolean>(false);
 
   // 搜尋即時生效：300ms debounce，避免每字元立即打 API
@@ -26,6 +29,8 @@ export default function ExamClient({ subjects, chapters }: any) {
     return () => clearTimeout(t);
   }, [search]);
 
+  useEffect(()=>{ safeLocalStorage.setJSON("favorites", favorites); }, [favorites]);
+  const toggleFav = (id:number)=> setFavorites(f=> f.includes(id) ? f.filter(x=> x!==id) : [...f, id]);
   const buildUrl = useCallback(
     (nextCursor: number | null) => {
       const params = new URLSearchParams();
