@@ -21,36 +21,49 @@ export default function QuestionCard({ question }: { question: Q }) {
   const [selected, setSelected] = useState<string[]>([]);
   const [fillAns, setFillAns] = useState("");
   const [submitted, setSubmitted] = useState(false);
-  const [result, setResult] = useState<{ isCorrect:boolean; score:number; correctAnswer:string } | null>(null);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [result, setResult] = useState<{ isCorrect: boolean; score: number; correctAnswer: string } | null>(null);
   const [showExplain, setShowExplain] = useState(false);
-  const [timeStart] = useState(()=> Date.now());
+  const [timeStart] = useState(() => Date.now());
 
   const isMultiple = question.questionType === "MULTIPLE" || question.questionType === "MIXED";
   const isFill = question.questionType === "FILL_IN";
 
-  function toggle(opt:string) {
-    const key = opt.trim().charAt(1) || opt; // "(A) ..." -> "A"
-    // extract letter
-    const m = opt.match(/\(([A-E0-9])\)/);
+  function toggle(opt: string) {
+    // 選項形如 "(A) ..."：取括號內字母；無括號時退回以索引為 key（由呼叫端傳入索引鍵）
+    const m = opt.match(/\(([A-E])\)/);
     const letter = m ? m[1] : opt;
     if (isMultiple) {
-      setSelected(s=> s.includes(letter) ? s.filter(x=> x!==letter) : [...s, letter]);
+      setSelected((s) => (s.includes(letter) ? s.filter((x) => x !== letter) : [...s, letter]));
     } else {
       setSelected([letter]);
     }
   }
 
   async function handleSubmit() {
+    if (submitting || submitted) return;
     const userSelected = isFill ? fillAns.trim() : selected.join(",");
-    const timeSpent = Math.round((Date.now() - timeStart)/1000);
-    const res = await fetch(`/api/questions/${question.id}/submit`, {
-      method:"POST", headers:{"Content-Type":"application/json"},
-      body: JSON.stringify({ userSelected, timeSpent })
-    });
-    const data = await res.json();
-    setSubmitted(true);
-    setResult(data);
-    setShowExplain(true);
+    if (!userSelected) return;
+    const timeSpent = Math.round((Date.now() - timeStart) / 1000);
+    setSubmitting(true);
+    setSubmitError(null);
+    try {
+      const res = await fetch(`/api/questions/${question.id}/submit`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ userSelected, timeSpent }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(typeof data?.error === "string" ? data.error : `HTTP ${res.status}`);
+      setSubmitted(true);
+      setResult(data);
+      setShowExplain(true);
+    } catch (e) {
+      setSubmitError(e instanceof Error ? e.message : "送出失敗，請重試");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   const correctSet = question.answer.split(",").map(s=> s.trim()).filter(Boolean);
@@ -97,7 +110,10 @@ export default function QuestionCard({ question }: { question: Q }) {
       )}
 
       {!submitted ? (
-        <button onClick={handleSubmit} disabled={!isAnswered} className="w-full py-2.5 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 disabled:opacity-40">送出作答</button>
+        <div className="space-y-2">
+          <button onClick={handleSubmit} disabled={!isAnswered || submitting} className="w-full py-2.5 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 disabled:opacity-40">{submitting ? "送出中…" : "送出作答"}</button>
+          {submitError && <p role="alert" className="text-xs text-red-600 text-center">{submitError}</p>}
+        </div>
       ) : (
         <div className="space-y-3">
           <div className={`p-3 rounded-lg text-sm ${result?.isCorrect ? "bg-emerald-50 text-emerald-800 border border-emerald-200" : "bg-red-50 text-red-800 border border-red-200"}`}>

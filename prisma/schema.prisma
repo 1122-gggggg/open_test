@@ -74,6 +74,9 @@ model Question {
 
   @@index([subjectId])
   @@index([chapterId])
+  @@index([examType, year])
+  @@index([subjectId, examType, year])
+  @@index([year, id])
 }
 
 model ExplanationSubmission {
@@ -107,6 +110,8 @@ model AnswerLog {
 
   @@index([chapterId])
   @@index([subjectId])
+  @@index([chapterId, isCorrect])
+  @@index([questionId, isCorrect])
 }
 
 model StudyScheduleItem {

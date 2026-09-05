@@ -12,6 +12,7 @@ const nav = [
   { href: "/", label: "首頁" },
   { href: "/learning", label: "學習區" },
   { href: "/exam", label: "題庫區" },
+  { href: "/mock", label: "模擬考" },
   { href: "/analytics", label: "弱點分析" },
   { href: "/planner", label: "學習排程" },
   { href: "/admin/submissions", label: "審核後台" },

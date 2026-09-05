@@ -1,7 +1,7 @@
-"use client";
-import { useState, useEffect, useCallback } from "react";
-import QuestionCard from "@/components/exam/QuestionCard";
-import { safeLocalStorage } from "@/lib/storage";
+  "use client";
+  import { useState, useEffect, useCallback, useRef } from "react";
+  import QuestionCard from "@/components/exam/QuestionCard";
+  import { safeLocalStorage } from "@/lib/storage";
 
 // 年份選項：涵蓋 100~115（民國年），避免依賴全量 questions 推導，保持分頁後仍可篩選
 const YEAR_OPTIONS = Array.from({ length: 16 }, (_, i) => 115 - i); // 115..100
@@ -15,7 +15,8 @@ export default function ExamClient({ subjects, chapters }: any) {
   const [debouncedSearch, setDebouncedSearch] = useState<string>("");
 
   const [questions, setQuestions] = useState<any[]>([]);
-  const [cursor, setCursor] = useState<number | null>(null);
+  // keyset cursor：新版為 `${year}:${id}` 字串；舊數字 id 仍相容（server 端解析）
+  const [cursor, setCursor] = useState<string | null>(null);
   const [hasMore, setHasMore] = useState<boolean>(true);
   const [loading, setLoading] = useState<boolean>(false);
   const [total, setTotal] = useState<number>(0);
@@ -32,7 +33,7 @@ export default function ExamClient({ subjects, chapters }: any) {
   useEffect(()=>{ safeLocalStorage.setJSON("favorites", favorites); }, [favorites]);
   const toggleFav = (id:number)=> setFavorites(f=> f.includes(id) ? f.filter(x=> x!==id) : [...f, id]);
   const buildUrl = useCallback(
-    (nextCursor: number | null) => {
+    (nextCursor: string | null) => {
       const params = new URLSearchParams();
       if (subjectFilter !== "ALL") params.set("subject", subjectFilter);
       if (chapterFilter !== "ALL") params.set("chapterId", chapterFilter);
@@ -40,67 +41,68 @@ export default function ExamClient({ subjects, chapters }: any) {
       if (yearFilter !== "ALL") params.set("year", yearFilter);
       if (debouncedSearch) params.set("search", debouncedSearch);
       params.set("take", "20");
-      if (nextCursor) params.set("cursor", String(nextCursor));
+      if (nextCursor) params.set("cursor", nextCursor);
       return `/api/questions?${params.toString()}`;
     },
     [subjectFilter, chapterFilter, examTypeFilter, yearFilter, debouncedSearch]
   );
 
+  // 請求序號：篩選快速切換時丟棄過期回應，避免後發先至覆蓋新結果
+  const reqSeq = useRef(0);
   const fetchPage = useCallback(
-    async (nextCursor: number | null, isReset: boolean) => {
+    async (nextCursor: string | null, isReset: boolean) => {
+      const mySeq = ++reqSeq.current;
       setLoading(true);
       try {
         const url = buildUrl(nextCursor);
         const res = await fetch(url, { cache: "no-store" });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
+        if (reqSeq.current !== mySeq) return; // 過期回應直接丟棄
 
-        // 兼容：無 take 時回純 array；有 take 時回 {questions, nextCursor, total}
+        // 兼容：無 take 時回純 array；有 take 時回 {questions, nextCursor, total, hasMore}
         let qs: any[] = [];
-        let next: number | null = null;
+        let next: string | null = null;
         let tot: number = 0;
+        let more: boolean = false;
         if (Array.isArray(data)) {
           qs = data;
-          next = null;
           tot = data.length;
-          // 純 array 視為已載入全部，無更多
-          setHasMore(false);
         } else if (data && Array.isArray(data.questions)) {
           qs = data.questions;
-          // PagApi 規格：nextCursor 可能為 number|null
-          next = data.nextCursor ?? data.next_cursor ?? null;
-          // 若 nextCursor 為 undefined 且有 hasMore 旗標
-          if (next === undefined && typeof data.hasMore === "boolean") {
-            next = data.hasMore ? qs[qs.length - 1]?.id ?? null : null;
-          }
+          const rawNext = data.nextCursor ?? data.next_cursor ?? null;
+          next = rawNext === undefined || rawNext === null ? null : String(rawNext);
           tot = typeof data.total === "number" ? data.total : qs.length;
-          setHasMore(next !== null && next !== undefined);
+          // server 新版直接給 hasMore；舊回應則以 nextCursor 是否存在推斷
+          more = typeof data.hasMore === "boolean" ? data.hasMore : next !== null;
         } else if (data && Array.isArray(data.data)) {
           qs = data.data;
-          next = data.nextCursor ?? null;
+          const rawNext = data.nextCursor ?? null;
+          next = rawNext === undefined || rawNext === null ? null : String(rawNext);
           tot = typeof data.total === "number" ? data.total : qs.length;
-          setHasMore(next !== null);
+          more = typeof data.hasMore === "boolean" ? data.hasMore : next !== null;
         } else {
           qs = [];
           tot = 0;
-          setHasMore(false);
+          more = false;
         }
 
         if (isReset) {
           setQuestions(qs);
         } else {
-          setQuestions((prev) => [...prev, ...qs]);
+          // 去重合併：keyset 邊界下 server 不會重疊，但舊 cursor 混用時以 id 去重保底
+          setQuestions((prev) => {
+            const seen = new Set(prev.map((q: any) => q.id));
+            return [...prev, ...qs.filter((q: any) => !seen.has(q.id))];
+          });
         }
         setCursor(next);
         setTotal(tot);
+        setHasMore(more);
         // 首次載入後標記，避免初始閃爍
         if (isReset) setInitialLoaded(true);
-        // 若回傳筆數 < take 且 next 為空，確保 hasMore 關閉
-        if (qs.length === 0 || (next === null && Array.isArray(data) === false)) {
-          // hasMore 已在上方設定
-        }
-        // 非 array 情況下，若 qs 長度 < 20 且 next 為 null，hasMore 已為 false
       } catch (e) {
+        if (reqSeq.current !== mySeq) return;
         console.error("[ExamClient] fetch failed", e);
         if (isReset) {
           setQuestions([]);
@@ -108,7 +110,7 @@ export default function ExamClient({ subjects, chapters }: any) {
         }
         setHasMore(false);
       } finally {
-        setLoading(false);
+        if (reqSeq.current === mySeq) setLoading(false);
       }
     },
     [buildUrl]

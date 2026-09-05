@@ -18,6 +18,10 @@ export async function POST(req: NextRequest, { params }: { params: { id:string }
   const parsed = submitSchema.safeParse(body);
   if (!parsed.success) return NextResponse.json({ error: parsed.error.issues }, { status:400 });
   const { userSelected, timeSpent } = parsed.data;
+  // 空答案直接退回，避免寫入無意義作答紀錄
+  if (String(userSelected).trim().length === 0) {
+    return NextResponse.json({ error: "userSelected 不可為空" }, { status: 400 });
+  }
   const question = await prisma.question.findUnique({ where:{ id } });
   if (!question) return NextResponse.json({ error:"question not found"}, { status:404 });
 
@@ -34,10 +38,12 @@ export async function POST(req: NextRequest, { params }: { params: { id:string }
     }
   });
 
-  // trigger scheduler if needed
-  // compute chapter accuracy for this chapter
-  const logs = await prisma.answerLog.findMany({ where:{ chapterId: question.chapterId } });
-  const acc = logs.length ? (logs.filter(l=> l.isCorrect).length / logs.length *100) : 0;
+  // 章節正確率改用 count 聚合（原 findMany 全量拉回記憶體計算，題數一多即爆）
+  const [chapterTotal, chapterCorrect] = await Promise.all([
+    prisma.answerLog.count({ where: { chapterId: question.chapterId } }),
+    prisma.answerLog.count({ where: { chapterId: question.chapterId, isCorrect: true } }),
+  ]);
+  const acc = chapterTotal > 0 ? (chapterCorrect / chapterTotal) * 100 : 0;
   await triggerScheduleIfNeeded(question.chapterId, isCorrect, acc);
 
   return NextResponse.json({ isCorrect, score, correctAnswer: question.answer, accuracy: Math.round(acc) });

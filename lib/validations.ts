@@ -24,3 +24,16 @@ export const adminActionSchema = z.object({
 export const scheduleCompleteSchema = z.object({
   id: z.number().int().positive(),
 });
+
+// 模擬考組卷筆數驗證：1~100
+export const mockPaperSchema = z.object({
+  count: z.number().int().min(1).max(100),
+});
+
+// 模擬考交卷驗證：answers 為 {questionId: userSelected}，至少 1 題至多 100 題
+export const mockSubmitSchema = z.object({
+  answers: z.record(z.string(), z.string()).refine((r) => Object.keys(r).length >= 1 && Object.keys(r).length <= 100, {
+    message: "answers 需為 1~100 題",
+  }),
+  timeSpent: z.number().min(0).max(3600 * 5).optional(),
+});

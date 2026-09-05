@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 const cards = [
+  { title: "模擬考", desc: "隨機組卷 · 計時作答 · 交卷即出成績與詳解", href: "/mock", color: "bg-indigo-50 border-indigo-200" },
   { title: "學習區", desc: "10大學科 · 108課綱章節樹 · YouTube 觀看數排序影片", href: "/learning", color: "bg-blue-50 border-blue-200" },
   { title: "題庫區", desc: "近十年學測/指考/分科/模考 · LaTeX 數學式 · 即時評分", href: "/exam", color: "bg-emerald-50 border-emerald-200" },
   { title: "弱點分析", desc: "雷達圖掌握度 · 錯題本 · Top5 弱點章節", href: "/analytics", color: "bg-amber-50 border-amber-200" },
