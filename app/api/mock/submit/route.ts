@@ -4,16 +4,18 @@ import { mockSubmitSchema } from "@/lib/validations";
 import { getClientIp, rateLimit } from "@/lib/rateLimit";
 import { gradeMockPaper } from "@/lib/mock";
 import { triggerScheduleIfNeeded } from "@/lib/scheduler";
+import { getUserKeyFromHeaders } from "@/lib/user";
 
 export const dynamic = "force-dynamic";
 
 // 模擬考交卷：POST /api/mock/submit { answers: { [qid]: userSelected }, timeSpent? }
-// 逐題沿用 scoreQuestion 計分，寫入 AnswerLog，弱章節觸發間隔重複排程
+// 逐題沿用 scoreQuestion 計分，寫入 AnswerLog（帶入 userKey），弱章節觸發排程
 export async function POST(req: NextRequest) {
   const ip = getClientIp(req);
   if (!rateLimit(ip)) {
     return NextResponse.json({ error: "Too Many Requests" }, { status: 429 });
   }
+  const userKey = getUserKeyFromHeaders(req.headers);
   const body = await req.json();
   const parsed = mockSubmitSchema.safeParse(body);
   if (!parsed.success) {
@@ -46,7 +48,7 @@ export async function POST(req: NextRequest) {
     })
   );
 
-  // 作答紀錄：整卷一次寫入；缺題（id 不存在）仍保留評分結果但不寫 log
+  // 作答紀錄：整卷一次寫入（帶入 userKey）
   const perQuestionTime =
     parsed.data.timeSpent !== undefined && summary.results.length > 0
       ? Math.max(0, Math.round(parsed.data.timeSpent / summary.results.length))
@@ -63,25 +65,26 @@ export async function POST(req: NextRequest) {
           userSelected: r.userSelected,
           isCorrect: r.isCorrect,
           timeSpent: perQuestionTime,
+          userKey,
         };
       })
       .filter((d) => d.chapterId > 0 && d.subjectId > 0),
   });
 
-  // 弱章節排程：依本次交卷各章節正確率觸發（<70% 或有錯即排）
+  // 弱章節排程：依本次交卷各章節正確率觸發（<70% 或有錯即排，帶入 userKey）
   const chapterIds = [...new Set(questions.map((q) => q.chapterId))];
   await Promise.all(
     chapterIds.map(async (chapterId) => {
       const [total, correct] = await Promise.all([
-        prisma.answerLog.count({ where: { chapterId } }),
-        prisma.answerLog.count({ where: { chapterId, isCorrect: true } }),
+        prisma.answerLog.count({ where: { chapterId, userKey } }),
+        prisma.answerLog.count({ where: { chapterId, isCorrect: true, userKey } }),
       ]);
       const acc = total > 0 ? (correct / total) * 100 : 0;
       const chapterWrong = summary.results.some((r) => {
         const q = byId.get(r.questionId);
         return q?.chapterId === chapterId && !r.isCorrect;
       });
-      await triggerScheduleIfNeeded(chapterId, !chapterWrong, acc);
+      await triggerScheduleIfNeeded(chapterId, !chapterWrong, acc, userKey);
     })
   );
 

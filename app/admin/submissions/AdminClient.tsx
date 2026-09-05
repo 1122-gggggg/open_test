@@ -20,12 +20,19 @@ export default function AdminClient(){
 
   async function load(){
     setLoading(true);
-    const res = await fetch("/api/submissions");
-    const data = await res.json();
-    setSubs(Array.isArray(data) ? data : []);
-    setLoading(false);
+    try {
+      let t = adminToken;
+      if (!t) {
+        try { t = localStorage.getItem("admin_token") || ""; } catch { t = ""; }
+      }
+      const res = await fetch("/api/submissions", { headers: t ? { "x-admin-token": t } : {} });
+      if (res.status === 401) { setMsg("需填入管理員 Token 才能查看審核清單"); setSubs([]); return; }
+      const data = await res.json();
+      setSubs(Array.isArray(data) ? data : []);
+    } finally {
+      setLoading(false);
+    }
   }
-  useEffect(()=>{ load(); },[]);
 
   async function act(id:number, action:"APPROVE"|"REJECT"){
     setMsg("");
@@ -74,6 +81,7 @@ export default function AdminClient(){
           }}
           className="flex-1 w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         />
+        <button onClick={load} className="px-3 py-2 border rounded-lg text-sm bg-white hover:bg-slate-50 whitespace-nowrap">重新載入</button>
         <span className="text-xs text-slate-400 whitespace-nowrap hidden sm:inline">自動保存於瀏覽器（localStorage）</span>
       </div>
       {msg && <div className="p-3 bg-blue-50 border border-blue-200 rounded text-sm text-blue-800">{msg}</div>}

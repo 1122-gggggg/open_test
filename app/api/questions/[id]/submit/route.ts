@@ -4,6 +4,7 @@ import { triggerScheduleIfNeeded } from "@/lib/scheduler";
 import { submitSchema } from "@/lib/validations";
 import { getClientIp, rateLimit } from "@/lib/rateLimit";
 import { scoreQuestion } from "@/lib/scoring";
+import { getUserKeyFromHeaders } from "@/lib/user";
 
 export async function POST(req: NextRequest, { params }: { params: { id:string } }) {
   const id = parseInt(params.id, 10);
@@ -22,9 +23,9 @@ export async function POST(req: NextRequest, { params }: { params: { id:string }
   if (String(userSelected).trim().length === 0) {
     return NextResponse.json({ error: "userSelected 不可為空" }, { status: 400 });
   }
-  const question = await prisma.question.findUnique({ where:{ id } });
-  if (!question) return NextResponse.json({ error:"question not found"}, { status:404 });
-
+  const question = await prisma.question.findUnique({ where: { id } });
+  if (!question) return NextResponse.json({ error: "question not found" }, { status: 404 });
+  const userKey = getUserKeyFromHeaders(req.headers);
   const { isCorrect, score } = scoreQuestion(question.questionType, question.answer, String(userSelected));
 
   await prisma.answerLog.create({
@@ -35,16 +36,16 @@ export async function POST(req: NextRequest, { params }: { params: { id:string }
       userSelected: String(userSelected),
       isCorrect,
       timeSpent: Number(timeSpent) || 0,
+      userKey,
     }
   });
 
-  // 章節正確率改用 count 聚合（原 findMany 全量拉回記憶體計算，題數一多即爆）
+  // 章節正確率改用 count 聚合（依 userKey 隔離，若無紀錄則全量保底）
   const [chapterTotal, chapterCorrect] = await Promise.all([
-    prisma.answerLog.count({ where: { chapterId: question.chapterId } }),
-    prisma.answerLog.count({ where: { chapterId: question.chapterId, isCorrect: true } }),
+    prisma.answerLog.count({ where: { chapterId: question.chapterId, userKey } }),
+    prisma.answerLog.count({ where: { chapterId: question.chapterId, isCorrect: true, userKey } }),
   ]);
   const acc = chapterTotal > 0 ? (chapterCorrect / chapterTotal) * 100 : 0;
-  await triggerScheduleIfNeeded(question.chapterId, isCorrect, acc);
-
+  await triggerScheduleIfNeeded(question.chapterId, isCorrect, acc, userKey);
   return NextResponse.json({ isCorrect, score, correctAnswer: question.answer, accuracy: Math.round(acc) });
 }

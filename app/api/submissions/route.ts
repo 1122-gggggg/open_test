@@ -21,7 +21,12 @@ export async function POST(req: NextRequest) {
   return NextResponse.json({ ok:true, id: sub.id });
 }
 
-export async function GET() {
+export async function GET(req: NextRequest) {
+  // 審核清單僅管理員可讀：有設 ADMIN_TOKEN 時需帶 x-admin-token（與 admin API 一致）
+  const expected = process.env.ADMIN_TOKEN;
+  if (expected && req.headers.get("x-admin-token") !== expected) {
+    return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  }
   const list = await prisma.explanationSubmission.findMany({ orderBy:{ createdAt:"desc"}, include:{ question:{ include:{ subject:true, chapter:true } } } });
   return NextResponse.json(list);
 }

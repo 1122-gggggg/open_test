@@ -12,21 +12,21 @@ export function buildScheduleDates(baseDate: Date = new Date()): Date[] {
   });
 }
 
-export async function createOrUpdateStudyPlan(chapterId: number) {
+export async function createOrUpdateStudyPlan(chapterId: number, userKey: string = "legacy") {
   const now = new Date();
-  // clear incomplete future items for this chapter? keep history, just add missing stages
-  const existing = await prisma.studyScheduleItem.findMany({ where: { chapterId } });
+  const existing = await prisma.studyScheduleItem.findMany({
+    where: { chapterId, userKey },
+  });
   const existingStages = new Set(existing.map((e) => e.repetitionStage));
 
-  const toCreate: { chapterId: number; scheduledDate: Date; repetitionStage: number }[] = [];
+  const toCreate: { chapterId: number; scheduledDate: Date; repetitionStage: number; userKey: string }[] = [];
   for (let i = 0; i < INTERVALS.length; i++) {
     const stage = i + 1;
     if (existingStages.has(stage)) continue;
     const d = new Date(now);
     d.setDate(d.getDate() + INTERVALS[i]);
-    // normalize to 09:00
     d.setHours(9, 0, 0, 0);
-    toCreate.push({ chapterId, scheduledDate: d, repetitionStage: stage });
+    toCreate.push({ chapterId, scheduledDate: d, repetitionStage: stage, userKey });
   }
   if (toCreate.length > 0) {
     await prisma.studyScheduleItem.createMany({ data: toCreate });
@@ -34,13 +34,17 @@ export async function createOrUpdateStudyPlan(chapterId: number) {
   return toCreate.length;
 }
 
-export async function triggerScheduleIfNeeded(chapterId: number, isCorrect: boolean, chapterAccuracy?: number) {
+export async function triggerScheduleIfNeeded(
+  chapterId: number,
+  isCorrect: boolean,
+  chapterAccuracy?: number,
+  userKey: string = "legacy"
+) {
   // 答錯或章節正確率 <70% 時觸發排程
   if (!isCorrect || (chapterAccuracy !== undefined && chapterAccuracy < 70)) {
-    await createOrUpdateStudyPlan(chapterId);
+    await createOrUpdateStudyPlan(chapterId, userKey);
   }
 }
-
 export function getIntervals() {
   return INTERVALS;
 }

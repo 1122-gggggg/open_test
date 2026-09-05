@@ -2,27 +2,28 @@
 import { useEffect, useState } from "react";
 import { formatViewCount } from "@/lib/utils";
 import Link from "next/link";
-
+import { userFetch } from "@/lib/clientUser";
 export default function PlannerClient(){
   const [items, setItems] = useState<any[]>([]);
   const [completedCount, setCompletedCount] = useState(0);
+  const [streak, setStreak] = useState(0);
   const [loading, setLoading] = useState(true);
 
   async function load(){
     setLoading(true);
-    const res = await fetch("/api/schedule");
+    const res = await userFetch("/api/schedule");
     const j = await res.json();
     setItems(j.items || []);
     setCompletedCount(j.completed || 0);
+    setStreak(typeof j.streak === "number" ? j.streak : 0);
     setLoading(false);
   }
   useEffect(()=>{ load(); },[]);
 
   async function complete(id:number){
-    await fetch("/api/schedule", { method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({ id })});
+    await userFetch("/api/schedule", { method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({ id })});
     load();
   }
-
   const today = new Date(); today.setHours(0,0,0,0);
   const todayItems = items.filter(i=> {
     const d = new Date(i.scheduledDate); d.setHours(0,0,0,0);
@@ -33,8 +34,7 @@ export default function PlannerClient(){
     return d.getTime() > today.getTime();
   });
 
-  const streak = completedCount; // simplified
-
+  // streak 來自 API 計算
   if (loading) return <div className="py-12 text-center text-slate-400">載入排程中...</div>;
 
   return (
@@ -62,7 +62,9 @@ export default function PlannerClient(){
             <h3 className="font-bold text-sm mb-3">📅 今日待複習 ({todayItems.length})</h3>
             <div className="grid md:grid-cols-2 gap-4">
               {todayItems.map(item=> {
-                const bestVideo = item.chapter.videos?.sort((a:any,b:any)=> b.viewCount - a.viewCount)[0];
+                // 複製後排序：直接 sort 會改動 fetch 回來的 prop 陣列
+                const vids = [...(item.chapter.videos ?? [])].sort((a, b) => b.viewCount - a.viewCount);
+                const bestVideo = vids[0];
                 return (
                   <div key={item.id} className="bg-white border rounded-xl p-4 space-y-3">
                     <div className="flex justify-between items-start">
@@ -74,7 +76,7 @@ export default function PlannerClient(){
                       <span className="text-xs bg-amber-100 text-amber-800 px-2 py-1 rounded-full">待完成</span>
                     </div>
                     {bestVideo && (
-                      <a href={`https://www.youtube.com/watch?v=${bestVideo.youtubeId.split("-")[0]}`} target="_blank" className="flex gap-3 p-2 bg-slate-50 border rounded-lg hover:bg-slate-100">
+                      <a href={`https://www.youtube.com/watch?v=${bestVideo.youtubeId.trim()}`} target="_blank" rel="noopener noreferrer" className="flex gap-3 p-2 bg-slate-50 border rounded-lg hover:bg-slate-100">
                         <img src={bestVideo.thumbnailUrl} alt={bestVideo.title} className="w-20 h-14 object-cover rounded" />
                         <div className="flex-1 min-w-0">
                           <div className="text-xs font-medium line-clamp-2">{bestVideo.title}</div>

@@ -3,6 +3,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import LatexRenderer from "@/components/math/LatexRenderer";
 import { safeLocalStorage } from "@/lib/storage";
 import { formatCountdown } from "@/lib/mock";
+import { userFetch } from "@/lib/clientUser";
 
 interface SubjectOpt {
   id: number;
@@ -237,7 +238,7 @@ export default function MockClient({ subjects, chapters }: { subjects: SubjectOp
           if (q.questionType === "FILL_IN") answers[String(q.id)] = (fills[String(q.id)] ?? "").trim();
           else answers[String(q.id)] = (choices[String(q.id)] ?? []).join(",");
         }
-        const res = await fetch("/api/mock/submit", {
+        const res = await userFetch("/api/mock/submit", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ answers }),

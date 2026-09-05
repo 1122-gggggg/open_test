@@ -137,6 +137,9 @@ export default function ExamClient({ subjects, chapters }: any) {
         const sub = subjects.find((s: any) => s.code === subjectFilter);
         return sub ? c.subjectId === sub.id : true;
       });
+  // 收藏篩選為前端過濾（僅作用於已載入題目，避免收藏分散各頁時需全表掃描）
+  const favSet = new Set(favorites);
+  const visibleQuestions = showFavOnly ? questions.filter((q: any) => favSet.has(q.id)) : questions;
 
   return (
     <div className="space-y-4">
@@ -182,7 +185,16 @@ export default function ExamClient({ subjects, chapters }: any) {
             className="block w-full border rounded px-3 py-1.5 text-sm mt-1 placeholder:text-slate-400"
           />
         </div>
-        {/* 列印考卷 - 僅螢幕顯示，列印時隱藏 */}
+        {/* 收藏篩選與列印 - 僅螢幕顯示，列印時隱藏 */}
+        <button
+          onClick={() => setShowFavOnly((v) => !v)}
+          aria-pressed={showFavOnly}
+          aria-label="只看收藏題目"
+          title="僅顯示已收藏題目（以已載入題目為範圍）"
+          className={`px-4 py-1.5 rounded-md text-sm border transition no-print ${showFavOnly ? "bg-amber-100 border-amber-300 text-amber-800" : "bg-white hover:bg-slate-50"}`}
+        >
+          {showFavOnly ? "★ 只看收藏" : "☆ 只看收藏"}（{favorites.length}）
+        </button>
         <button
           onClick={() => window.print()}
           aria-label="列印考卷"
@@ -200,12 +212,12 @@ export default function ExamClient({ subjects, chapters }: any) {
       <div className="space-y-6 exam-print-area print-area">
         {loading && questions.length===0 ? (
           <div className="text-center py-12 text-slate-400">載入中…</div>
-        ) : questions.length===0 ? (
+        ) : visibleQuestions.length===0 ? (
           <div className="text-center py-12 text-slate-400">
-            {initialLoaded ? "無符合條件題目" : "載入中…"}
+            {initialLoaded ? (showFavOnly ? "已載入題目中尚無收藏，可先點題目右上角 ☆ 收藏" : "無符合條件題目") : "載入中…"}
           </div>
         ) : (
-          questions.map((q:any)=> <QuestionCard key={q.id} question={q} />)
+          visibleQuestions.map((q:any)=> <QuestionCard key={q.id} question={q} isFav={favorites.includes(q.id)} onToggleFav={()=> toggleFav(q.id)} />)
         )}
       </div>
 

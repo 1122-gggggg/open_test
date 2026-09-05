@@ -1,9 +1,11 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
+import { getUserKeyFromHeaders } from "@/lib/user";
 
 export const dynamic = "force-dynamic";
 
-export async function GET() {
+export async function GET(req: NextRequest) {
+  const userKey = getUserKeyFromHeaders(req.headers);
   // 平行查詢：科目/章節主檔 + DB 聚合統計 + 錯題去重
   const [
     subjects,
@@ -17,33 +19,35 @@ export async function GET() {
   ] = await Promise.all([
     prisma.subject.findMany({ orderBy: { sortOrder: "asc" } }),
     prisma.chapter.findMany({ include: { subject: true } }),
-    // 各科目總作答數與平均耗時（DB 端聚合）
+    // 各科目總作答數與平均耗時（依 userKey 隔離）
     prisma.answerLog.groupBy({
       by: ["subjectId"],
+      where: { userKey },
       _count: { id: true },
       _avg: { timeSpent: true },
     }),
-    // 各科目答對數（where isCorrect true 再 groupBy）
+    // 各科目答對數
     prisma.answerLog.groupBy({
       by: ["subjectId"],
-      where: { isCorrect: true },
+      where: { userKey, isCorrect: true },
       _count: { id: true },
     }),
     // 各章節總作答數
     prisma.answerLog.groupBy({
       by: ["chapterId"],
+      where: { userKey },
       _count: { id: true },
     }),
     // 各章節答對數
     prisma.answerLog.groupBy({
       by: ["chapterId"],
-      where: { isCorrect: true },
+      where: { userKey, isCorrect: true },
       _count: { id: true },
     }),
-    prisma.answerLog.count(),
-    // 錯題本：DB 端 distinct 取 questionId，避免拉全表 JS filter
+    prisma.answerLog.count({ where: { userKey } }),
+    // 錯題本：DB 端 distinct 取 questionId
     prisma.answerLog.findMany({
-      where: { isCorrect: false },
+      where: { userKey, isCorrect: false },
       distinct: ["questionId"],
       select: { questionId: true },
     }),

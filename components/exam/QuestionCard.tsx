@@ -2,7 +2,7 @@
 import { useState } from "react";
 import LatexRenderer from "@/components/math/LatexRenderer";
 import SubmitExplanationModal from "./SubmitExplanationModal";
-
+import { userFetch } from "@/lib/clientUser";
 type Q = {
   id:number;
   stem:string;
@@ -16,7 +16,7 @@ type Q = {
   subject:{ name:string }; chapter:{ name:string };
 };
 
-export default function QuestionCard({ question }: { question: Q }) {
+export default function QuestionCard({ question, isFav, onToggleFav }: { question: Q; isFav?: boolean; onToggleFav?: () => void }) {
   const opts: string[] = (()=> { try { return JSON.parse(question.options); } catch { return []; } })();
   const [selected, setSelected] = useState<string[]>([]);
   const [fillAns, setFillAns] = useState("");
@@ -49,7 +49,7 @@ export default function QuestionCard({ question }: { question: Q }) {
     setSubmitting(true);
     setSubmitError(null);
     try {
-      const res = await fetch(`/api/questions/${question.id}/submit`, {
+      const res = await userFetch(`/api/questions/${question.id}/submit`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ userSelected, timeSpent }),
@@ -71,12 +71,23 @@ export default function QuestionCard({ question }: { question: Q }) {
 
   return (
     <div className="bg-white border rounded-xl p-5 space-y-4">
-      <div className="flex flex-wrap gap-2 text-xs">
+      <div className="flex flex-wrap gap-2 text-xs items-center">
         <span className="px-2 py-1 bg-slate-100 rounded">{question.subject.name}</span>
         <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded">{question.chapter.name}</span>
         <span className="px-2 py-1 bg-amber-50 rounded">{question.year}年 {question.examType} 第{question.questionNumber}題</span>
         <span className="px-2 py-1 bg-slate-100 rounded">{question.questionType}</span>
         <span className="px-2 py-1 bg-slate-100 rounded">難易 {question.difficulty}/5</span>
+        {onToggleFav && (
+          <button
+            onClick={onToggleFav}
+            aria-pressed={isFav === true}
+            aria-label={isFav ? "取消收藏" : "收藏此題"}
+            title={isFav ? "取消收藏" : "收藏此題"}
+            className={`ml-auto px-2 py-1 rounded border no-print ${isFav ? "bg-amber-100 border-amber-300 text-amber-700" : "bg-white text-slate-400 hover:text-amber-600"}`}
+          >
+            {isFav ? "★" : "☆"}
+          </button>
+        )}
       </div>
 
       <div className="text-[15px] leading-relaxed">

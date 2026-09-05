@@ -43,8 +43,22 @@ const chapterCurated: Record<string, TutorialVideoData[]> = {
   ],
 };
 
-// 記憶體快取：TTL 1 小時，避免重複呼叫 YouTube API
-const memCache = new Map<string,{data:TutorialVideoData[], exp:number}>()
+// 記憶體快取：TTL 1 小時，避免重複呼叫 YouTube API；上限 200 筆並淘汰過期/最舊
+const memCache = new Map<string, { data: TutorialVideoData[]; exp: number }>();
+const MAX_CACHE_ENTRIES = 200;
+function cacheSet(key: string, data: TutorialVideoData[]): void {
+  const now = Date.now();
+  for (const [k, v] of memCache) {
+    if (v.exp <= now) memCache.delete(k);
+    if (memCache.size < MAX_CACHE_ENTRIES) break;
+  }
+  while (memCache.size >= MAX_CACHE_ENTRIES) {
+    const oldest = memCache.keys().next().value as string | undefined;
+    if (oldest === undefined) break;
+    memCache.delete(oldest);
+  }
+  memCache.set(key, { data, exp: now + 3600 * 1000 });
+}
 
 export async function fetchChapterVideos(chapterName: string, subjectName: string, maxResults = 8): Promise<TutorialVideoData[]> {
   const key = `${chapterName}:${subjectName}:${maxResults}`
@@ -77,7 +91,7 @@ export async function fetchChapterVideos(chapterName: string, subjectName: strin
             }));
             videos.sort((a,b)=> b.viewCount - a.viewCount);
             if (videos.length > 0) {
-              memCache.set(key,{data:videos,exp:Date.now()+3600*1000})
+              cacheSet(key, videos);
               return videos;
             }
           }
@@ -90,15 +104,15 @@ export async function fetchChapterVideos(chapterName: string, subjectName: strin
   // fallback
   const curated = chapterCurated[chapterName] || chapterCurated[chapterName.replace(/^.*_/,"")] || null;
   if (curated) {
-    const result = [...curated].sort((a,b)=> b.viewCount - a.viewCount);
-    memCache.set(key,{data:result,exp:Date.now()+3600*1000})
+    const result = [...curated].sort((a, b) => b.viewCount - a.viewCount);
+    cacheSet(key, result);
     return result;
   }
   // generic fallback mixed with chapter
   const generic = [...curatedLibrary.default];
   // sprinkle chapter name into title for relevance
-  const result = generic.map(v=> ({...v, title: v.title.replace("學測", chapterName + " 學測")})).sort((a,b)=> b.viewCount - a.viewCount).slice(0, maxResults);
-  memCache.set(key,{data:result,exp:Date.now()+3600*1000})
+  const result = generic.map((v) => ({ ...v, title: v.title.replace("學測", chapterName + " 學測") })).sort((a, b) => b.viewCount - a.viewCount).slice(0, maxResults);
+  cacheSet(key, result);
   return result;
 }
 

@@ -107,11 +107,16 @@ model AnswerLog {
   isCorrect    Boolean
   timeSpent    Int
   createdAt    DateTime @default(now())
+  // 多使用者隔離：瀏覽器 userKey（UUID），舊資料為 "legacy"
+  userKey      String   @default("legacy")
 
   @@index([chapterId])
   @@index([subjectId])
   @@index([chapterId, isCorrect])
   @@index([questionId, isCorrect])
+  @@index([userKey, chapterId])
+  @@index([userKey, subjectId])
+  @@index([userKey, isCorrect])
 }
 
 model StudyScheduleItem {
@@ -119,10 +124,14 @@ model StudyScheduleItem {
   chapterId       Int
   chapter         Chapter  @relation(fields: [chapterId], references: [id], onDelete: Cascade)
   scheduledDate   DateTime
-  repetitionStage Int      @default(1)
-  isCompleted     Boolean  @default(false)
-  createdAt       DateTime @default(now())
+  repetitionStage Int       @default(1)
+  isCompleted     Boolean   @default(false)
+  completedAt     DateTime?
+  userKey         String    @default("legacy")
+  createdAt       DateTime  @default(now())
 
   @@index([chapterId])
   @@index([scheduledDate])
+  @@index([userKey, isCompleted, scheduledDate])
+  @@index([userKey, chapterId])
 }

@@ -1,6 +1,7 @@
 "use client";
 export default function VideoPlayerModal({ youtubeId, title, onClose }: { youtubeId: string; title: string; onClose: () => void }) {
-  const cleanId = youtubeId.split("-")[0];
+  // YouTube ID 為 base64url（含 - 與 _），僅去空白，不可再截斷
+  const cleanId = youtubeId.trim();
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4" onClick={onClose}>
       <div className="bg-white rounded-xl overflow-hidden w-full max-w-3xl shadow-xl" onClick={e=>e.stopPropagation()}>

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from "recharts";
 import LatexRenderer from "@/components/math/LatexRenderer";
 import Link from "next/link";
+import { userFetch } from "@/lib/clientUser";
 
 export default function AnalyticsClient() {
   const [data, setData] = useState<any>(null);
@@ -11,7 +12,7 @@ export default function AnalyticsClient() {
 
   async function load() {
     setLoading(true);
-    const res = await fetch("/api/analytics/weakness");
+    const res = await userFetch("/api/analytics/weakness");
     const j = await res.json();
     setData(j);
     setLoading(false);
